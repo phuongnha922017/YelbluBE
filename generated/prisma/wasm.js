@@ -117,7 +117,7 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
-exports.Prisma.DishesScalarFieldEnum = {
+exports.Prisma.DishScalarFieldEnum = {
   id: 'id',
   title: 'title',
   thumnail: 'thumnail',
@@ -127,7 +127,7 @@ exports.Prisma.DishesScalarFieldEnum = {
   createdAt: 'createdAt'
 };
 
-exports.Prisma.NutritionsScalarFieldEnum = {
+exports.Prisma.NutritionScalarFieldEnum = {
   id: 'id',
   datatime: 'datatime',
   caloriesIn: 'caloriesIn',
@@ -146,10 +146,15 @@ exports.Prisma.QueryMode = {
   insensitive: 'insensitive'
 };
 
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
+};
+
 
 exports.Prisma.ModelName = {
-  Dishes: 'Dishes',
-  Nutritions: 'Nutritions'
+  Dish: 'Dish',
+  Nutrition: 'Nutrition'
 };
 
 /**

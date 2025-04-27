@@ -14,21 +14,21 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Dishes{
-  id Int @id @default(autoincrement())
-  title String
-  thumnail String?
-  videoLinks String?
+model Dish {
+  id               Int      @id @default(autoincrement())
+  title            String
+  thumnail         String?
+  videoLinks       String?
   instruction_step String?
-  isFavorite Boolean @default(false)
-  createdAt  DateTime @default(now())
+  isFavorite       Boolean  @default(false)
+  createdAt        DateTime @default(now())
 }
 
-model Nutritions{
-  id Int @id @default(autoincrement())
-  datatime  DateTime @default(now())
+model Nutrition {
+  id         Int      @id @default(autoincrement())
+  datatime   DateTime @default(now())
   caloriesIn Int
-  fat Float
-  protein Float
-  carbs Float
+  fat        Float
+  protein    Float
+  carbs      Float
 }

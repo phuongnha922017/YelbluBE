@@ -14,15 +14,15 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
 
 
 /**
- * Model Dishes
+ * Model Dish
  * 
  */
-export type Dishes = $Result.DefaultSelection<Prisma.$DishesPayload>
+export type Dish = $Result.DefaultSelection<Prisma.$DishPayload>
 /**
- * Model Nutritions
+ * Model Nutrition
  * 
  */
-export type Nutritions = $Result.DefaultSelection<Prisma.$NutritionsPayload>
+export type Nutrition = $Result.DefaultSelection<Prisma.$NutritionPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -32,7 +32,7 @@ export type Nutritions = $Result.DefaultSelection<Prisma.$NutritionsPayload>
  * ```
  * const prisma = new PrismaClient()
  * // Fetch zero or more Dishes
- * const dishes = await prisma.dishes.findMany()
+ * const dishes = await prisma.dish.findMany()
  * ```
  *
  *
@@ -53,7 +53,7 @@ export class PrismaClient<
    * ```
    * const prisma = new PrismaClient()
    * // Fetch zero or more Dishes
-   * const dishes = await prisma.dishes.findMany()
+   * const dishes = await prisma.dish.findMany()
    * ```
    *
    *
@@ -150,24 +150,24 @@ export class PrismaClient<
   }>>
 
       /**
-   * `prisma.dishes`: Exposes CRUD operations for the **Dishes** model.
+   * `prisma.dish`: Exposes CRUD operations for the **Dish** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more Dishes
-    * const dishes = await prisma.dishes.findMany()
+    * const dishes = await prisma.dish.findMany()
     * ```
     */
-  get dishes(): Prisma.DishesDelegate<ExtArgs, ClientOptions>;
+  get dish(): Prisma.DishDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.nutritions`: Exposes CRUD operations for the **Nutritions** model.
+   * `prisma.nutrition`: Exposes CRUD operations for the **Nutrition** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more Nutritions
-    * const nutritions = await prisma.nutritions.findMany()
+    * const nutritions = await prisma.nutrition.findMany()
     * ```
     */
-  get nutritions(): Prisma.NutritionsDelegate<ExtArgs, ClientOptions>;
+  get nutrition(): Prisma.NutritionDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -608,8 +608,8 @@ export namespace Prisma {
 
 
   export const ModelName: {
-    Dishes: 'Dishes',
-    Nutritions: 'Nutritions'
+    Dish: 'Dish',
+    Nutrition: 'Nutrition'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -628,155 +628,155 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "dishes" | "nutritions"
+      modelProps: "dish" | "nutrition"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
-      Dishes: {
-        payload: Prisma.$DishesPayload<ExtArgs>
-        fields: Prisma.DishesFieldRefs
+      Dish: {
+        payload: Prisma.$DishPayload<ExtArgs>
+        fields: Prisma.DishFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.DishesFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$DishesPayload> | null
+            args: Prisma.DishFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DishPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.DishesFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$DishesPayload>
+            args: Prisma.DishFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DishPayload>
           }
           findFirst: {
-            args: Prisma.DishesFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$DishesPayload> | null
+            args: Prisma.DishFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DishPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.DishesFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$DishesPayload>
+            args: Prisma.DishFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DishPayload>
           }
           findMany: {
-            args: Prisma.DishesFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$DishesPayload>[]
+            args: Prisma.DishFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DishPayload>[]
           }
           create: {
-            args: Prisma.DishesCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$DishesPayload>
+            args: Prisma.DishCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DishPayload>
           }
           createMany: {
-            args: Prisma.DishesCreateManyArgs<ExtArgs>
+            args: Prisma.DishCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.DishesCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$DishesPayload>[]
+            args: Prisma.DishCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DishPayload>[]
           }
           delete: {
-            args: Prisma.DishesDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$DishesPayload>
+            args: Prisma.DishDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DishPayload>
           }
           update: {
-            args: Prisma.DishesUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$DishesPayload>
+            args: Prisma.DishUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DishPayload>
           }
           deleteMany: {
-            args: Prisma.DishesDeleteManyArgs<ExtArgs>
+            args: Prisma.DishDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.DishesUpdateManyArgs<ExtArgs>
+            args: Prisma.DishUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.DishesUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$DishesPayload>[]
+            args: Prisma.DishUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DishPayload>[]
           }
           upsert: {
-            args: Prisma.DishesUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$DishesPayload>
+            args: Prisma.DishUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$DishPayload>
           }
           aggregate: {
-            args: Prisma.DishesAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateDishes>
+            args: Prisma.DishAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateDish>
           }
           groupBy: {
-            args: Prisma.DishesGroupByArgs<ExtArgs>
-            result: $Utils.Optional<DishesGroupByOutputType>[]
+            args: Prisma.DishGroupByArgs<ExtArgs>
+            result: $Utils.Optional<DishGroupByOutputType>[]
           }
           count: {
-            args: Prisma.DishesCountArgs<ExtArgs>
-            result: $Utils.Optional<DishesCountAggregateOutputType> | number
+            args: Prisma.DishCountArgs<ExtArgs>
+            result: $Utils.Optional<DishCountAggregateOutputType> | number
           }
         }
       }
-      Nutritions: {
-        payload: Prisma.$NutritionsPayload<ExtArgs>
-        fields: Prisma.NutritionsFieldRefs
+      Nutrition: {
+        payload: Prisma.$NutritionPayload<ExtArgs>
+        fields: Prisma.NutritionFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.NutritionsFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$NutritionsPayload> | null
+            args: Prisma.NutritionFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NutritionPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.NutritionsFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$NutritionsPayload>
+            args: Prisma.NutritionFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NutritionPayload>
           }
           findFirst: {
-            args: Prisma.NutritionsFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$NutritionsPayload> | null
+            args: Prisma.NutritionFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NutritionPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.NutritionsFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$NutritionsPayload>
+            args: Prisma.NutritionFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NutritionPayload>
           }
           findMany: {
-            args: Prisma.NutritionsFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$NutritionsPayload>[]
+            args: Prisma.NutritionFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NutritionPayload>[]
           }
           create: {
-            args: Prisma.NutritionsCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$NutritionsPayload>
+            args: Prisma.NutritionCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NutritionPayload>
           }
           createMany: {
-            args: Prisma.NutritionsCreateManyArgs<ExtArgs>
+            args: Prisma.NutritionCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.NutritionsCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$NutritionsPayload>[]
+            args: Prisma.NutritionCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NutritionPayload>[]
           }
           delete: {
-            args: Prisma.NutritionsDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$NutritionsPayload>
+            args: Prisma.NutritionDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NutritionPayload>
           }
           update: {
-            args: Prisma.NutritionsUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$NutritionsPayload>
+            args: Prisma.NutritionUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NutritionPayload>
           }
           deleteMany: {
-            args: Prisma.NutritionsDeleteManyArgs<ExtArgs>
+            args: Prisma.NutritionDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.NutritionsUpdateManyArgs<ExtArgs>
+            args: Prisma.NutritionUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.NutritionsUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$NutritionsPayload>[]
+            args: Prisma.NutritionUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NutritionPayload>[]
           }
           upsert: {
-            args: Prisma.NutritionsUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$NutritionsPayload>
+            args: Prisma.NutritionUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NutritionPayload>
           }
           aggregate: {
-            args: Prisma.NutritionsAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateNutritions>
+            args: Prisma.NutritionAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateNutrition>
           }
           groupBy: {
-            args: Prisma.NutritionsGroupByArgs<ExtArgs>
-            result: $Utils.Optional<NutritionsGroupByOutputType>[]
+            args: Prisma.NutritionGroupByArgs<ExtArgs>
+            result: $Utils.Optional<NutritionGroupByOutputType>[]
           }
           count: {
-            args: Prisma.NutritionsCountArgs<ExtArgs>
-            result: $Utils.Optional<NutritionsCountAggregateOutputType> | number
+            args: Prisma.NutritionCountArgs<ExtArgs>
+            result: $Utils.Optional<NutritionCountAggregateOutputType> | number
           }
         }
       }
@@ -864,8 +864,8 @@ export namespace Prisma {
     omit?: Prisma.GlobalOmitConfig
   }
   export type GlobalOmitConfig = {
-    dishes?: DishesOmit
-    nutritions?: NutritionsOmit
+    dish?: DishOmit
+    nutrition?: NutritionOmit
   }
 
   /* Types for Logging */
@@ -961,42 +961,46 @@ export namespace Prisma {
    */
 
   /**
-   * Model Dishes
+   * Model Dish
    */
 
-  export type AggregateDishes = {
-    _count: DishesCountAggregateOutputType | null
-    _avg: DishesAvgAggregateOutputType | null
-    _sum: DishesSumAggregateOutputType | null
-    _min: DishesMinAggregateOutputType | null
-    _max: DishesMaxAggregateOutputType | null
+  export type AggregateDish = {
+    _count: DishCountAggregateOutputType | null
+    _avg: DishAvgAggregateOutputType | null
+    _sum: DishSumAggregateOutputType | null
+    _min: DishMinAggregateOutputType | null
+    _max: DishMaxAggregateOutputType | null
   }
 
-  export type DishesAvgAggregateOutputType = {
+  export type DishAvgAggregateOutputType = {
     id: number | null
   }
 
-  export type DishesSumAggregateOutputType = {
+  export type DishSumAggregateOutputType = {
     id: number | null
   }
 
-  export type DishesMinAggregateOutputType = {
+  export type DishMinAggregateOutputType = {
     id: number | null
     title: string | null
+    thumnail: string | null
+    videoLinks: string | null
     instruction_step: string | null
     isFavorite: boolean | null
     createdAt: Date | null
   }
 
-  export type DishesMaxAggregateOutputType = {
+  export type DishMaxAggregateOutputType = {
     id: number | null
     title: string | null
+    thumnail: string | null
+    videoLinks: string | null
     instruction_step: string | null
     isFavorite: boolean | null
     createdAt: Date | null
   }
 
-  export type DishesCountAggregateOutputType = {
+  export type DishCountAggregateOutputType = {
     id: number
     title: number
     thumnail: number
@@ -1008,31 +1012,35 @@ export namespace Prisma {
   }
 
 
-  export type DishesAvgAggregateInputType = {
+  export type DishAvgAggregateInputType = {
     id?: true
   }
 
-  export type DishesSumAggregateInputType = {
+  export type DishSumAggregateInputType = {
     id?: true
   }
 
-  export type DishesMinAggregateInputType = {
+  export type DishMinAggregateInputType = {
     id?: true
     title?: true
+    thumnail?: true
+    videoLinks?: true
     instruction_step?: true
     isFavorite?: true
     createdAt?: true
   }
 
-  export type DishesMaxAggregateInputType = {
+  export type DishMaxAggregateInputType = {
     id?: true
     title?: true
+    thumnail?: true
+    videoLinks?: true
     instruction_step?: true
     isFavorite?: true
     createdAt?: true
   }
 
-  export type DishesCountAggregateInputType = {
+  export type DishCountAggregateInputType = {
     id?: true
     title?: true
     thumnail?: true
@@ -1043,23 +1051,23 @@ export namespace Prisma {
     _all?: true
   }
 
-  export type DishesAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type DishAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Dishes to aggregate.
+     * Filter which Dish to aggregate.
      */
-    where?: DishesWhereInput
+    where?: DishWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
      * Determine the order of Dishes to fetch.
      */
-    orderBy?: DishesOrderByWithRelationInput | DishesOrderByWithRelationInput[]
+    orderBy?: DishOrderByWithRelationInput | DishOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: DishesWhereUniqueInput
+    cursor?: DishWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
@@ -1077,88 +1085,88 @@ export namespace Prisma {
      * 
      * Count returned Dishes
     **/
-    _count?: true | DishesCountAggregateInputType
+    _count?: true | DishCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: DishesAvgAggregateInputType
+    _avg?: DishAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: DishesSumAggregateInputType
+    _sum?: DishSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: DishesMinAggregateInputType
+    _min?: DishMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: DishesMaxAggregateInputType
+    _max?: DishMaxAggregateInputType
   }
 
-  export type GetDishesAggregateType<T extends DishesAggregateArgs> = {
-        [P in keyof T & keyof AggregateDishes]: P extends '_count' | 'count'
+  export type GetDishAggregateType<T extends DishAggregateArgs> = {
+        [P in keyof T & keyof AggregateDish]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateDishes[P]>
-      : GetScalarType<T[P], AggregateDishes[P]>
+        : GetScalarType<T[P], AggregateDish[P]>
+      : GetScalarType<T[P], AggregateDish[P]>
   }
 
 
 
 
-  export type DishesGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: DishesWhereInput
-    orderBy?: DishesOrderByWithAggregationInput | DishesOrderByWithAggregationInput[]
-    by: DishesScalarFieldEnum[] | DishesScalarFieldEnum
-    having?: DishesScalarWhereWithAggregatesInput
+  export type DishGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: DishWhereInput
+    orderBy?: DishOrderByWithAggregationInput | DishOrderByWithAggregationInput[]
+    by: DishScalarFieldEnum[] | DishScalarFieldEnum
+    having?: DishScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: DishesCountAggregateInputType | true
-    _avg?: DishesAvgAggregateInputType
-    _sum?: DishesSumAggregateInputType
-    _min?: DishesMinAggregateInputType
-    _max?: DishesMaxAggregateInputType
+    _count?: DishCountAggregateInputType | true
+    _avg?: DishAvgAggregateInputType
+    _sum?: DishSumAggregateInputType
+    _min?: DishMinAggregateInputType
+    _max?: DishMaxAggregateInputType
   }
 
-  export type DishesGroupByOutputType = {
+  export type DishGroupByOutputType = {
     id: number
     title: string
-    thumnail: string[]
-    videoLinks: string[]
-    instruction_step: string
+    thumnail: string | null
+    videoLinks: string | null
+    instruction_step: string | null
     isFavorite: boolean
     createdAt: Date
-    _count: DishesCountAggregateOutputType | null
-    _avg: DishesAvgAggregateOutputType | null
-    _sum: DishesSumAggregateOutputType | null
-    _min: DishesMinAggregateOutputType | null
-    _max: DishesMaxAggregateOutputType | null
+    _count: DishCountAggregateOutputType | null
+    _avg: DishAvgAggregateOutputType | null
+    _sum: DishSumAggregateOutputType | null
+    _min: DishMinAggregateOutputType | null
+    _max: DishMaxAggregateOutputType | null
   }
 
-  type GetDishesGroupByPayload<T extends DishesGroupByArgs> = Prisma.PrismaPromise<
+  type GetDishGroupByPayload<T extends DishGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<DishesGroupByOutputType, T['by']> &
+      PickEnumerable<DishGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof DishesGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof DishGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], DishesGroupByOutputType[P]>
-            : GetScalarType<T[P], DishesGroupByOutputType[P]>
+              : GetScalarType<T[P], DishGroupByOutputType[P]>
+            : GetScalarType<T[P], DishGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type DishesSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type DishSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     title?: boolean
     thumnail?: boolean
@@ -1166,9 +1174,9 @@ export namespace Prisma {
     instruction_step?: boolean
     isFavorite?: boolean
     createdAt?: boolean
-  }, ExtArgs["result"]["dishes"]>
+  }, ExtArgs["result"]["dish"]>
 
-  export type DishesSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type DishSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     title?: boolean
     thumnail?: boolean
@@ -1176,9 +1184,9 @@ export namespace Prisma {
     instruction_step?: boolean
     isFavorite?: boolean
     createdAt?: boolean
-  }, ExtArgs["result"]["dishes"]>
+  }, ExtArgs["result"]["dish"]>
 
-  export type DishesSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type DishSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     title?: boolean
     thumnail?: boolean
@@ -1186,9 +1194,9 @@ export namespace Prisma {
     instruction_step?: boolean
     isFavorite?: boolean
     createdAt?: boolean
-  }, ExtArgs["result"]["dishes"]>
+  }, ExtArgs["result"]["dish"]>
 
-  export type DishesSelectScalar = {
+  export type DishSelectScalar = {
     id?: boolean
     title?: boolean
     thumnail?: boolean
@@ -1198,149 +1206,149 @@ export namespace Prisma {
     createdAt?: boolean
   }
 
-  export type DishesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "thumnail" | "videoLinks" | "instruction_step" | "isFavorite" | "createdAt", ExtArgs["result"]["dishes"]>
+  export type DishOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "thumnail" | "videoLinks" | "instruction_step" | "isFavorite" | "createdAt", ExtArgs["result"]["dish"]>
 
-  export type $DishesPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Dishes"
+  export type $DishPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Dish"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: number
       title: string
-      thumnail: string[]
-      videoLinks: string[]
-      instruction_step: string
+      thumnail: string | null
+      videoLinks: string | null
+      instruction_step: string | null
       isFavorite: boolean
       createdAt: Date
-    }, ExtArgs["result"]["dishes"]>
+    }, ExtArgs["result"]["dish"]>
     composites: {}
   }
 
-  type DishesGetPayload<S extends boolean | null | undefined | DishesDefaultArgs> = $Result.GetResult<Prisma.$DishesPayload, S>
+  type DishGetPayload<S extends boolean | null | undefined | DishDefaultArgs> = $Result.GetResult<Prisma.$DishPayload, S>
 
-  type DishesCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<DishesFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: DishesCountAggregateInputType | true
+  type DishCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<DishFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: DishCountAggregateInputType | true
     }
 
-  export interface DishesDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Dishes'], meta: { name: 'Dishes' } }
+  export interface DishDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Dish'], meta: { name: 'Dish' } }
     /**
-     * Find zero or one Dishes that matches the filter.
-     * @param {DishesFindUniqueArgs} args - Arguments to find a Dishes
+     * Find zero or one Dish that matches the filter.
+     * @param {DishFindUniqueArgs} args - Arguments to find a Dish
      * @example
-     * // Get one Dishes
-     * const dishes = await prisma.dishes.findUnique({
+     * // Get one Dish
+     * const dish = await prisma.dish.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends DishesFindUniqueArgs>(args: SelectSubset<T, DishesFindUniqueArgs<ExtArgs>>): Prisma__DishesClient<$Result.GetResult<Prisma.$DishesPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends DishFindUniqueArgs>(args: SelectSubset<T, DishFindUniqueArgs<ExtArgs>>): Prisma__DishClient<$Result.GetResult<Prisma.$DishPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one Dishes that matches the filter or throw an error with `error.code='P2025'`
+     * Find one Dish that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {DishesFindUniqueOrThrowArgs} args - Arguments to find a Dishes
+     * @param {DishFindUniqueOrThrowArgs} args - Arguments to find a Dish
      * @example
-     * // Get one Dishes
-     * const dishes = await prisma.dishes.findUniqueOrThrow({
+     * // Get one Dish
+     * const dish = await prisma.dish.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends DishesFindUniqueOrThrowArgs>(args: SelectSubset<T, DishesFindUniqueOrThrowArgs<ExtArgs>>): Prisma__DishesClient<$Result.GetResult<Prisma.$DishesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends DishFindUniqueOrThrowArgs>(args: SelectSubset<T, DishFindUniqueOrThrowArgs<ExtArgs>>): Prisma__DishClient<$Result.GetResult<Prisma.$DishPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Dishes that matches the filter.
+     * Find the first Dish that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {DishesFindFirstArgs} args - Arguments to find a Dishes
+     * @param {DishFindFirstArgs} args - Arguments to find a Dish
      * @example
-     * // Get one Dishes
-     * const dishes = await prisma.dishes.findFirst({
+     * // Get one Dish
+     * const dish = await prisma.dish.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends DishesFindFirstArgs>(args?: SelectSubset<T, DishesFindFirstArgs<ExtArgs>>): Prisma__DishesClient<$Result.GetResult<Prisma.$DishesPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends DishFindFirstArgs>(args?: SelectSubset<T, DishFindFirstArgs<ExtArgs>>): Prisma__DishClient<$Result.GetResult<Prisma.$DishPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Dishes that matches the filter or
+     * Find the first Dish that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {DishesFindFirstOrThrowArgs} args - Arguments to find a Dishes
+     * @param {DishFindFirstOrThrowArgs} args - Arguments to find a Dish
      * @example
-     * // Get one Dishes
-     * const dishes = await prisma.dishes.findFirstOrThrow({
+     * // Get one Dish
+     * const dish = await prisma.dish.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends DishesFindFirstOrThrowArgs>(args?: SelectSubset<T, DishesFindFirstOrThrowArgs<ExtArgs>>): Prisma__DishesClient<$Result.GetResult<Prisma.$DishesPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends DishFindFirstOrThrowArgs>(args?: SelectSubset<T, DishFindFirstOrThrowArgs<ExtArgs>>): Prisma__DishClient<$Result.GetResult<Prisma.$DishPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find zero or more Dishes that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {DishesFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {DishFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Dishes
-     * const dishes = await prisma.dishes.findMany()
+     * const dishes = await prisma.dish.findMany()
      * 
      * // Get first 10 Dishes
-     * const dishes = await prisma.dishes.findMany({ take: 10 })
+     * const dishes = await prisma.dish.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const dishesWithIdOnly = await prisma.dishes.findMany({ select: { id: true } })
+     * const dishWithIdOnly = await prisma.dish.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends DishesFindManyArgs>(args?: SelectSubset<T, DishesFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DishesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends DishFindManyArgs>(args?: SelectSubset<T, DishFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DishPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a Dishes.
-     * @param {DishesCreateArgs} args - Arguments to create a Dishes.
+     * Create a Dish.
+     * @param {DishCreateArgs} args - Arguments to create a Dish.
      * @example
-     * // Create one Dishes
-     * const Dishes = await prisma.dishes.create({
+     * // Create one Dish
+     * const Dish = await prisma.dish.create({
      *   data: {
-     *     // ... data to create a Dishes
+     *     // ... data to create a Dish
      *   }
      * })
      * 
      */
-    create<T extends DishesCreateArgs>(args: SelectSubset<T, DishesCreateArgs<ExtArgs>>): Prisma__DishesClient<$Result.GetResult<Prisma.$DishesPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends DishCreateArgs>(args: SelectSubset<T, DishCreateArgs<ExtArgs>>): Prisma__DishClient<$Result.GetResult<Prisma.$DishPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Create many Dishes.
-     * @param {DishesCreateManyArgs} args - Arguments to create many Dishes.
+     * @param {DishCreateManyArgs} args - Arguments to create many Dishes.
      * @example
      * // Create many Dishes
-     * const dishes = await prisma.dishes.createMany({
+     * const dish = await prisma.dish.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends DishesCreateManyArgs>(args?: SelectSubset<T, DishesCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends DishCreateManyArgs>(args?: SelectSubset<T, DishCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create many Dishes and returns the data saved in the database.
-     * @param {DishesCreateManyAndReturnArgs} args - Arguments to create many Dishes.
+     * @param {DishCreateManyAndReturnArgs} args - Arguments to create many Dishes.
      * @example
      * // Create many Dishes
-     * const dishes = await prisma.dishes.createManyAndReturn({
+     * const dish = await prisma.dish.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
      * // Create many Dishes and only return the `id`
-     * const dishesWithIdOnly = await prisma.dishes.createManyAndReturn({
+     * const dishWithIdOnly = await prisma.dish.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -1350,28 +1358,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends DishesCreateManyAndReturnArgs>(args?: SelectSubset<T, DishesCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DishesPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends DishCreateManyAndReturnArgs>(args?: SelectSubset<T, DishCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DishPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a Dishes.
-     * @param {DishesDeleteArgs} args - Arguments to delete one Dishes.
+     * Delete a Dish.
+     * @param {DishDeleteArgs} args - Arguments to delete one Dish.
      * @example
-     * // Delete one Dishes
-     * const Dishes = await prisma.dishes.delete({
+     * // Delete one Dish
+     * const Dish = await prisma.dish.delete({
      *   where: {
-     *     // ... filter to delete one Dishes
+     *     // ... filter to delete one Dish
      *   }
      * })
      * 
      */
-    delete<T extends DishesDeleteArgs>(args: SelectSubset<T, DishesDeleteArgs<ExtArgs>>): Prisma__DishesClient<$Result.GetResult<Prisma.$DishesPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends DishDeleteArgs>(args: SelectSubset<T, DishDeleteArgs<ExtArgs>>): Prisma__DishClient<$Result.GetResult<Prisma.$DishPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one Dishes.
-     * @param {DishesUpdateArgs} args - Arguments to update one Dishes.
+     * Update one Dish.
+     * @param {DishUpdateArgs} args - Arguments to update one Dish.
      * @example
-     * // Update one Dishes
-     * const dishes = await prisma.dishes.update({
+     * // Update one Dish
+     * const dish = await prisma.dish.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -1381,30 +1389,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends DishesUpdateArgs>(args: SelectSubset<T, DishesUpdateArgs<ExtArgs>>): Prisma__DishesClient<$Result.GetResult<Prisma.$DishesPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends DishUpdateArgs>(args: SelectSubset<T, DishUpdateArgs<ExtArgs>>): Prisma__DishClient<$Result.GetResult<Prisma.$DishPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Delete zero or more Dishes.
-     * @param {DishesDeleteManyArgs} args - Arguments to filter Dishes to delete.
+     * @param {DishDeleteManyArgs} args - Arguments to filter Dishes to delete.
      * @example
      * // Delete a few Dishes
-     * const { count } = await prisma.dishes.deleteMany({
+     * const { count } = await prisma.dish.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends DishesDeleteManyArgs>(args?: SelectSubset<T, DishesDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends DishDeleteManyArgs>(args?: SelectSubset<T, DishDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Dishes.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {DishesUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {DishUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many Dishes
-     * const dishes = await prisma.dishes.updateMany({
+     * const dish = await prisma.dish.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -1414,14 +1422,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends DishesUpdateManyArgs>(args: SelectSubset<T, DishesUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends DishUpdateManyArgs>(args: SelectSubset<T, DishUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Dishes and returns the data updated in the database.
-     * @param {DishesUpdateManyAndReturnArgs} args - Arguments to update many Dishes.
+     * @param {DishUpdateManyAndReturnArgs} args - Arguments to update many Dishes.
      * @example
      * // Update many Dishes
-     * const dishes = await prisma.dishes.updateManyAndReturn({
+     * const dish = await prisma.dish.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -1431,7 +1439,7 @@ export namespace Prisma {
      * })
      * 
      * // Update zero or more Dishes and only return the `id`
-     * const dishesWithIdOnly = await prisma.dishes.updateManyAndReturn({
+     * const dishWithIdOnly = await prisma.dish.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -1444,56 +1452,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends DishesUpdateManyAndReturnArgs>(args: SelectSubset<T, DishesUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DishesPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends DishUpdateManyAndReturnArgs>(args: SelectSubset<T, DishUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$DishPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one Dishes.
-     * @param {DishesUpsertArgs} args - Arguments to update or create a Dishes.
+     * Create or update one Dish.
+     * @param {DishUpsertArgs} args - Arguments to update or create a Dish.
      * @example
-     * // Update or create a Dishes
-     * const dishes = await prisma.dishes.upsert({
+     * // Update or create a Dish
+     * const dish = await prisma.dish.upsert({
      *   create: {
-     *     // ... data to create a Dishes
+     *     // ... data to create a Dish
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Dishes we want to update
+     *     // ... the filter for the Dish we want to update
      *   }
      * })
      */
-    upsert<T extends DishesUpsertArgs>(args: SelectSubset<T, DishesUpsertArgs<ExtArgs>>): Prisma__DishesClient<$Result.GetResult<Prisma.$DishesPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends DishUpsertArgs>(args: SelectSubset<T, DishUpsertArgs<ExtArgs>>): Prisma__DishClient<$Result.GetResult<Prisma.$DishPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
      * Count the number of Dishes.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {DishesCountArgs} args - Arguments to filter Dishes to count.
+     * @param {DishCountArgs} args - Arguments to filter Dishes to count.
      * @example
      * // Count the number of Dishes
-     * const count = await prisma.dishes.count({
+     * const count = await prisma.dish.count({
      *   where: {
      *     // ... the filter for the Dishes we want to count
      *   }
      * })
     **/
-    count<T extends DishesCountArgs>(
-      args?: Subset<T, DishesCountArgs>,
+    count<T extends DishCountArgs>(
+      args?: Subset<T, DishCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], DishesCountAggregateOutputType>
+          : GetScalarType<T['select'], DishCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Dishes.
+     * Allows you to perform aggregations operations on a Dish.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {DishesAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {DishAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -1513,13 +1521,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends DishesAggregateArgs>(args: Subset<T, DishesAggregateArgs>): Prisma.PrismaPromise<GetDishesAggregateType<T>>
+    aggregate<T extends DishAggregateArgs>(args: Subset<T, DishAggregateArgs>): Prisma.PrismaPromise<GetDishAggregateType<T>>
 
     /**
-     * Group by Dishes.
+     * Group by Dish.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {DishesGroupByArgs} args - Group by arguments.
+     * @param {DishGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -1534,14 +1542,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends DishesGroupByArgs,
+      T extends DishGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: DishesGroupByArgs['orderBy'] }
-        : { orderBy?: DishesGroupByArgs['orderBy'] },
+        ? { orderBy: DishGroupByArgs['orderBy'] }
+        : { orderBy?: DishGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -1590,20 +1598,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, DishesGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetDishesGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, DishGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetDishGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Dishes model
+   * Fields of the Dish model
    */
-  readonly fields: DishesFieldRefs;
+  readonly fields: DishFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Dishes.
+   * The delegate class that acts as a "Promise-like" for Dish.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__DishesClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__DishClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -1631,84 +1639,84 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Dishes model
+   * Fields of the Dish model
    */
-  interface DishesFieldRefs {
-    readonly id: FieldRef<"Dishes", 'Int'>
-    readonly title: FieldRef<"Dishes", 'String'>
-    readonly thumnail: FieldRef<"Dishes", 'String[]'>
-    readonly videoLinks: FieldRef<"Dishes", 'String[]'>
-    readonly instruction_step: FieldRef<"Dishes", 'String'>
-    readonly isFavorite: FieldRef<"Dishes", 'Boolean'>
-    readonly createdAt: FieldRef<"Dishes", 'DateTime'>
+  interface DishFieldRefs {
+    readonly id: FieldRef<"Dish", 'Int'>
+    readonly title: FieldRef<"Dish", 'String'>
+    readonly thumnail: FieldRef<"Dish", 'String'>
+    readonly videoLinks: FieldRef<"Dish", 'String'>
+    readonly instruction_step: FieldRef<"Dish", 'String'>
+    readonly isFavorite: FieldRef<"Dish", 'Boolean'>
+    readonly createdAt: FieldRef<"Dish", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * Dishes findUnique
+   * Dish findUnique
    */
-  export type DishesFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type DishFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Dishes
+     * Select specific fields to fetch from the Dish
      */
-    select?: DishesSelect<ExtArgs> | null
+    select?: DishSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Dishes
+     * Omit specific fields from the Dish
      */
-    omit?: DishesOmit<ExtArgs> | null
+    omit?: DishOmit<ExtArgs> | null
     /**
-     * Filter, which Dishes to fetch.
+     * Filter, which Dish to fetch.
      */
-    where: DishesWhereUniqueInput
+    where: DishWhereUniqueInput
   }
 
   /**
-   * Dishes findUniqueOrThrow
+   * Dish findUniqueOrThrow
    */
-  export type DishesFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type DishFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Dishes
+     * Select specific fields to fetch from the Dish
      */
-    select?: DishesSelect<ExtArgs> | null
+    select?: DishSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Dishes
+     * Omit specific fields from the Dish
      */
-    omit?: DishesOmit<ExtArgs> | null
+    omit?: DishOmit<ExtArgs> | null
     /**
-     * Filter, which Dishes to fetch.
+     * Filter, which Dish to fetch.
      */
-    where: DishesWhereUniqueInput
+    where: DishWhereUniqueInput
   }
 
   /**
-   * Dishes findFirst
+   * Dish findFirst
    */
-  export type DishesFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type DishFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Dishes
+     * Select specific fields to fetch from the Dish
      */
-    select?: DishesSelect<ExtArgs> | null
+    select?: DishSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Dishes
+     * Omit specific fields from the Dish
      */
-    omit?: DishesOmit<ExtArgs> | null
+    omit?: DishOmit<ExtArgs> | null
     /**
-     * Filter, which Dishes to fetch.
+     * Filter, which Dish to fetch.
      */
-    where?: DishesWhereInput
+    where?: DishWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
      * Determine the order of Dishes to fetch.
      */
-    orderBy?: DishesOrderByWithRelationInput | DishesOrderByWithRelationInput[]
+    orderBy?: DishOrderByWithRelationInput | DishOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the position for searching for Dishes.
      */
-    cursor?: DishesWhereUniqueInput
+    cursor?: DishWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
@@ -1726,37 +1734,37 @@ export namespace Prisma {
      * 
      * Filter by unique combinations of Dishes.
      */
-    distinct?: DishesScalarFieldEnum | DishesScalarFieldEnum[]
+    distinct?: DishScalarFieldEnum | DishScalarFieldEnum[]
   }
 
   /**
-   * Dishes findFirstOrThrow
+   * Dish findFirstOrThrow
    */
-  export type DishesFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type DishFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Dishes
+     * Select specific fields to fetch from the Dish
      */
-    select?: DishesSelect<ExtArgs> | null
+    select?: DishSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Dishes
+     * Omit specific fields from the Dish
      */
-    omit?: DishesOmit<ExtArgs> | null
+    omit?: DishOmit<ExtArgs> | null
     /**
-     * Filter, which Dishes to fetch.
+     * Filter, which Dish to fetch.
      */
-    where?: DishesWhereInput
+    where?: DishWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
      * Determine the order of Dishes to fetch.
      */
-    orderBy?: DishesOrderByWithRelationInput | DishesOrderByWithRelationInput[]
+    orderBy?: DishOrderByWithRelationInput | DishOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the position for searching for Dishes.
      */
-    cursor?: DishesWhereUniqueInput
+    cursor?: DishWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
@@ -1774,37 +1782,37 @@ export namespace Prisma {
      * 
      * Filter by unique combinations of Dishes.
      */
-    distinct?: DishesScalarFieldEnum | DishesScalarFieldEnum[]
+    distinct?: DishScalarFieldEnum | DishScalarFieldEnum[]
   }
 
   /**
-   * Dishes findMany
+   * Dish findMany
    */
-  export type DishesFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type DishFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Dishes
+     * Select specific fields to fetch from the Dish
      */
-    select?: DishesSelect<ExtArgs> | null
+    select?: DishSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Dishes
+     * Omit specific fields from the Dish
      */
-    omit?: DishesOmit<ExtArgs> | null
+    omit?: DishOmit<ExtArgs> | null
     /**
      * Filter, which Dishes to fetch.
      */
-    where?: DishesWhereInput
+    where?: DishWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
      * Determine the order of Dishes to fetch.
      */
-    orderBy?: DishesOrderByWithRelationInput | DishesOrderByWithRelationInput[]
+    orderBy?: DishOrderByWithRelationInput | DishOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the position for listing Dishes.
      */
-    cursor?: DishesWhereUniqueInput
+    cursor?: DishWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
@@ -1817,91 +1825,91 @@ export namespace Prisma {
      * Skip the first `n` Dishes.
      */
     skip?: number
-    distinct?: DishesScalarFieldEnum | DishesScalarFieldEnum[]
+    distinct?: DishScalarFieldEnum | DishScalarFieldEnum[]
   }
 
   /**
-   * Dishes create
+   * Dish create
    */
-  export type DishesCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type DishCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Dishes
+     * Select specific fields to fetch from the Dish
      */
-    select?: DishesSelect<ExtArgs> | null
+    select?: DishSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Dishes
+     * Omit specific fields from the Dish
      */
-    omit?: DishesOmit<ExtArgs> | null
+    omit?: DishOmit<ExtArgs> | null
     /**
-     * The data needed to create a Dishes.
+     * The data needed to create a Dish.
      */
-    data: XOR<DishesCreateInput, DishesUncheckedCreateInput>
+    data: XOR<DishCreateInput, DishUncheckedCreateInput>
   }
 
   /**
-   * Dishes createMany
+   * Dish createMany
    */
-  export type DishesCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type DishCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * The data used to create many Dishes.
      */
-    data: DishesCreateManyInput | DishesCreateManyInput[]
+    data: DishCreateManyInput | DishCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Dishes createManyAndReturn
+   * Dish createManyAndReturn
    */
-  export type DishesCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type DishCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Dishes
+     * Select specific fields to fetch from the Dish
      */
-    select?: DishesSelectCreateManyAndReturn<ExtArgs> | null
+    select?: DishSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Dishes
+     * Omit specific fields from the Dish
      */
-    omit?: DishesOmit<ExtArgs> | null
+    omit?: DishOmit<ExtArgs> | null
     /**
      * The data used to create many Dishes.
      */
-    data: DishesCreateManyInput | DishesCreateManyInput[]
+    data: DishCreateManyInput | DishCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Dishes update
+   * Dish update
    */
-  export type DishesUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type DishUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Dishes
+     * Select specific fields to fetch from the Dish
      */
-    select?: DishesSelect<ExtArgs> | null
+    select?: DishSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Dishes
+     * Omit specific fields from the Dish
      */
-    omit?: DishesOmit<ExtArgs> | null
+    omit?: DishOmit<ExtArgs> | null
     /**
-     * The data needed to update a Dishes.
+     * The data needed to update a Dish.
      */
-    data: XOR<DishesUpdateInput, DishesUncheckedUpdateInput>
+    data: XOR<DishUpdateInput, DishUncheckedUpdateInput>
     /**
-     * Choose, which Dishes to update.
+     * Choose, which Dish to update.
      */
-    where: DishesWhereUniqueInput
+    where: DishWhereUniqueInput
   }
 
   /**
-   * Dishes updateMany
+   * Dish updateMany
    */
-  export type DishesUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type DishUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * The data used to update Dishes.
      */
-    data: XOR<DishesUpdateManyMutationInput, DishesUncheckedUpdateManyInput>
+    data: XOR<DishUpdateManyMutationInput, DishUncheckedUpdateManyInput>
     /**
      * Filter which Dishes to update
      */
-    where?: DishesWhereInput
+    where?: DishWhereInput
     /**
      * Limit how many Dishes to update.
      */
@@ -1909,25 +1917,25 @@ export namespace Prisma {
   }
 
   /**
-   * Dishes updateManyAndReturn
+   * Dish updateManyAndReturn
    */
-  export type DishesUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type DishUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Dishes
+     * Select specific fields to fetch from the Dish
      */
-    select?: DishesSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: DishSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Dishes
+     * Omit specific fields from the Dish
      */
-    omit?: DishesOmit<ExtArgs> | null
+    omit?: DishOmit<ExtArgs> | null
     /**
      * The data used to update Dishes.
      */
-    data: XOR<DishesUpdateManyMutationInput, DishesUncheckedUpdateManyInput>
+    data: XOR<DishUpdateManyMutationInput, DishUncheckedUpdateManyInput>
     /**
      * Filter which Dishes to update
      */
-    where?: DishesWhereInput
+    where?: DishWhereInput
     /**
      * Limit how many Dishes to update.
      */
@@ -1935,57 +1943,57 @@ export namespace Prisma {
   }
 
   /**
-   * Dishes upsert
+   * Dish upsert
    */
-  export type DishesUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type DishUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Dishes
+     * Select specific fields to fetch from the Dish
      */
-    select?: DishesSelect<ExtArgs> | null
+    select?: DishSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Dishes
+     * Omit specific fields from the Dish
      */
-    omit?: DishesOmit<ExtArgs> | null
+    omit?: DishOmit<ExtArgs> | null
     /**
-     * The filter to search for the Dishes to update in case it exists.
+     * The filter to search for the Dish to update in case it exists.
      */
-    where: DishesWhereUniqueInput
+    where: DishWhereUniqueInput
     /**
-     * In case the Dishes found by the `where` argument doesn't exist, create a new Dishes with this data.
+     * In case the Dish found by the `where` argument doesn't exist, create a new Dish with this data.
      */
-    create: XOR<DishesCreateInput, DishesUncheckedCreateInput>
+    create: XOR<DishCreateInput, DishUncheckedCreateInput>
     /**
-     * In case the Dishes was found with the provided `where` argument, update it with this data.
+     * In case the Dish was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<DishesUpdateInput, DishesUncheckedUpdateInput>
+    update: XOR<DishUpdateInput, DishUncheckedUpdateInput>
   }
 
   /**
-   * Dishes delete
+   * Dish delete
    */
-  export type DishesDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type DishDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Dishes
+     * Select specific fields to fetch from the Dish
      */
-    select?: DishesSelect<ExtArgs> | null
+    select?: DishSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Dishes
+     * Omit specific fields from the Dish
      */
-    omit?: DishesOmit<ExtArgs> | null
+    omit?: DishOmit<ExtArgs> | null
     /**
-     * Filter which Dishes to delete.
+     * Filter which Dish to delete.
      */
-    where: DishesWhereUniqueInput
+    where: DishWhereUniqueInput
   }
 
   /**
-   * Dishes deleteMany
+   * Dish deleteMany
    */
-  export type DishesDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type DishDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Filter which Dishes to delete
      */
-    where?: DishesWhereInput
+    where?: DishWhereInput
     /**
      * Limit how many Dishes to delete.
      */
@@ -1993,33 +2001,33 @@ export namespace Prisma {
   }
 
   /**
-   * Dishes without action
+   * Dish without action
    */
-  export type DishesDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type DishDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Dishes
+     * Select specific fields to fetch from the Dish
      */
-    select?: DishesSelect<ExtArgs> | null
+    select?: DishSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Dishes
+     * Omit specific fields from the Dish
      */
-    omit?: DishesOmit<ExtArgs> | null
+    omit?: DishOmit<ExtArgs> | null
   }
 
 
   /**
-   * Model Nutritions
+   * Model Nutrition
    */
 
-  export type AggregateNutritions = {
-    _count: NutritionsCountAggregateOutputType | null
-    _avg: NutritionsAvgAggregateOutputType | null
-    _sum: NutritionsSumAggregateOutputType | null
-    _min: NutritionsMinAggregateOutputType | null
-    _max: NutritionsMaxAggregateOutputType | null
+  export type AggregateNutrition = {
+    _count: NutritionCountAggregateOutputType | null
+    _avg: NutritionAvgAggregateOutputType | null
+    _sum: NutritionSumAggregateOutputType | null
+    _min: NutritionMinAggregateOutputType | null
+    _max: NutritionMaxAggregateOutputType | null
   }
 
-  export type NutritionsAvgAggregateOutputType = {
+  export type NutritionAvgAggregateOutputType = {
     id: number | null
     caloriesIn: number | null
     fat: number | null
@@ -2027,7 +2035,7 @@ export namespace Prisma {
     carbs: number | null
   }
 
-  export type NutritionsSumAggregateOutputType = {
+  export type NutritionSumAggregateOutputType = {
     id: number | null
     caloriesIn: number | null
     fat: number | null
@@ -2035,16 +2043,7 @@ export namespace Prisma {
     carbs: number | null
   }
 
-  export type NutritionsMinAggregateOutputType = {
-    id: number | null
-    datatime: Date | null
-    caloriesIn: number | null
-    fat: number | null
-    protein: number | null
-    carbs: number | null
-  }
-
-  export type NutritionsMaxAggregateOutputType = {
+  export type NutritionMinAggregateOutputType = {
     id: number | null
     datatime: Date | null
     caloriesIn: number | null
@@ -2053,7 +2052,16 @@ export namespace Prisma {
     carbs: number | null
   }
 
-  export type NutritionsCountAggregateOutputType = {
+  export type NutritionMaxAggregateOutputType = {
+    id: number | null
+    datatime: Date | null
+    caloriesIn: number | null
+    fat: number | null
+    protein: number | null
+    carbs: number | null
+  }
+
+  export type NutritionCountAggregateOutputType = {
     id: number
     datatime: number
     caloriesIn: number
@@ -2064,7 +2072,7 @@ export namespace Prisma {
   }
 
 
-  export type NutritionsAvgAggregateInputType = {
+  export type NutritionAvgAggregateInputType = {
     id?: true
     caloriesIn?: true
     fat?: true
@@ -2072,7 +2080,7 @@ export namespace Prisma {
     carbs?: true
   }
 
-  export type NutritionsSumAggregateInputType = {
+  export type NutritionSumAggregateInputType = {
     id?: true
     caloriesIn?: true
     fat?: true
@@ -2080,16 +2088,7 @@ export namespace Prisma {
     carbs?: true
   }
 
-  export type NutritionsMinAggregateInputType = {
-    id?: true
-    datatime?: true
-    caloriesIn?: true
-    fat?: true
-    protein?: true
-    carbs?: true
-  }
-
-  export type NutritionsMaxAggregateInputType = {
+  export type NutritionMinAggregateInputType = {
     id?: true
     datatime?: true
     caloriesIn?: true
@@ -2098,7 +2097,16 @@ export namespace Prisma {
     carbs?: true
   }
 
-  export type NutritionsCountAggregateInputType = {
+  export type NutritionMaxAggregateInputType = {
+    id?: true
+    datatime?: true
+    caloriesIn?: true
+    fat?: true
+    protein?: true
+    carbs?: true
+  }
+
+  export type NutritionCountAggregateInputType = {
     id?: true
     datatime?: true
     caloriesIn?: true
@@ -2108,23 +2116,23 @@ export namespace Prisma {
     _all?: true
   }
 
-  export type NutritionsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type NutritionAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Nutritions to aggregate.
+     * Filter which Nutrition to aggregate.
      */
-    where?: NutritionsWhereInput
+    where?: NutritionWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
      * Determine the order of Nutritions to fetch.
      */
-    orderBy?: NutritionsOrderByWithRelationInput | NutritionsOrderByWithRelationInput[]
+    orderBy?: NutritionOrderByWithRelationInput | NutritionOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: NutritionsWhereUniqueInput
+    cursor?: NutritionWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
@@ -2142,114 +2150,114 @@ export namespace Prisma {
      * 
      * Count returned Nutritions
     **/
-    _count?: true | NutritionsCountAggregateInputType
+    _count?: true | NutritionCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: NutritionsAvgAggregateInputType
+    _avg?: NutritionAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: NutritionsSumAggregateInputType
+    _sum?: NutritionSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: NutritionsMinAggregateInputType
+    _min?: NutritionMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: NutritionsMaxAggregateInputType
+    _max?: NutritionMaxAggregateInputType
   }
 
-  export type GetNutritionsAggregateType<T extends NutritionsAggregateArgs> = {
-        [P in keyof T & keyof AggregateNutritions]: P extends '_count' | 'count'
+  export type GetNutritionAggregateType<T extends NutritionAggregateArgs> = {
+        [P in keyof T & keyof AggregateNutrition]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateNutritions[P]>
-      : GetScalarType<T[P], AggregateNutritions[P]>
+        : GetScalarType<T[P], AggregateNutrition[P]>
+      : GetScalarType<T[P], AggregateNutrition[P]>
   }
 
 
 
 
-  export type NutritionsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: NutritionsWhereInput
-    orderBy?: NutritionsOrderByWithAggregationInput | NutritionsOrderByWithAggregationInput[]
-    by: NutritionsScalarFieldEnum[] | NutritionsScalarFieldEnum
-    having?: NutritionsScalarWhereWithAggregatesInput
+  export type NutritionGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: NutritionWhereInput
+    orderBy?: NutritionOrderByWithAggregationInput | NutritionOrderByWithAggregationInput[]
+    by: NutritionScalarFieldEnum[] | NutritionScalarFieldEnum
+    having?: NutritionScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: NutritionsCountAggregateInputType | true
-    _avg?: NutritionsAvgAggregateInputType
-    _sum?: NutritionsSumAggregateInputType
-    _min?: NutritionsMinAggregateInputType
-    _max?: NutritionsMaxAggregateInputType
+    _count?: NutritionCountAggregateInputType | true
+    _avg?: NutritionAvgAggregateInputType
+    _sum?: NutritionSumAggregateInputType
+    _min?: NutritionMinAggregateInputType
+    _max?: NutritionMaxAggregateInputType
   }
 
-  export type NutritionsGroupByOutputType = {
+  export type NutritionGroupByOutputType = {
     id: number
     datatime: Date
     caloriesIn: number
     fat: number
     protein: number
     carbs: number
-    _count: NutritionsCountAggregateOutputType | null
-    _avg: NutritionsAvgAggregateOutputType | null
-    _sum: NutritionsSumAggregateOutputType | null
-    _min: NutritionsMinAggregateOutputType | null
-    _max: NutritionsMaxAggregateOutputType | null
+    _count: NutritionCountAggregateOutputType | null
+    _avg: NutritionAvgAggregateOutputType | null
+    _sum: NutritionSumAggregateOutputType | null
+    _min: NutritionMinAggregateOutputType | null
+    _max: NutritionMaxAggregateOutputType | null
   }
 
-  type GetNutritionsGroupByPayload<T extends NutritionsGroupByArgs> = Prisma.PrismaPromise<
+  type GetNutritionGroupByPayload<T extends NutritionGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<NutritionsGroupByOutputType, T['by']> &
+      PickEnumerable<NutritionGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof NutritionsGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof NutritionGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], NutritionsGroupByOutputType[P]>
-            : GetScalarType<T[P], NutritionsGroupByOutputType[P]>
+              : GetScalarType<T[P], NutritionGroupByOutputType[P]>
+            : GetScalarType<T[P], NutritionGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type NutritionsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type NutritionSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     datatime?: boolean
     caloriesIn?: boolean
     fat?: boolean
     protein?: boolean
     carbs?: boolean
-  }, ExtArgs["result"]["nutritions"]>
+  }, ExtArgs["result"]["nutrition"]>
 
-  export type NutritionsSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type NutritionSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     datatime?: boolean
     caloriesIn?: boolean
     fat?: boolean
     protein?: boolean
     carbs?: boolean
-  }, ExtArgs["result"]["nutritions"]>
+  }, ExtArgs["result"]["nutrition"]>
 
-  export type NutritionsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type NutritionSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     datatime?: boolean
     caloriesIn?: boolean
     fat?: boolean
     protein?: boolean
     carbs?: boolean
-  }, ExtArgs["result"]["nutritions"]>
+  }, ExtArgs["result"]["nutrition"]>
 
-  export type NutritionsSelectScalar = {
+  export type NutritionSelectScalar = {
     id?: boolean
     datatime?: boolean
     caloriesIn?: boolean
@@ -2258,10 +2266,10 @@ export namespace Prisma {
     carbs?: boolean
   }
 
-  export type NutritionsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "datatime" | "caloriesIn" | "fat" | "protein" | "carbs", ExtArgs["result"]["nutritions"]>
+  export type NutritionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "datatime" | "caloriesIn" | "fat" | "protein" | "carbs", ExtArgs["result"]["nutrition"]>
 
-  export type $NutritionsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Nutritions"
+  export type $NutritionPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Nutrition"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -2270,136 +2278,136 @@ export namespace Prisma {
       fat: number
       protein: number
       carbs: number
-    }, ExtArgs["result"]["nutritions"]>
+    }, ExtArgs["result"]["nutrition"]>
     composites: {}
   }
 
-  type NutritionsGetPayload<S extends boolean | null | undefined | NutritionsDefaultArgs> = $Result.GetResult<Prisma.$NutritionsPayload, S>
+  type NutritionGetPayload<S extends boolean | null | undefined | NutritionDefaultArgs> = $Result.GetResult<Prisma.$NutritionPayload, S>
 
-  type NutritionsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<NutritionsFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: NutritionsCountAggregateInputType | true
+  type NutritionCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<NutritionFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: NutritionCountAggregateInputType | true
     }
 
-  export interface NutritionsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Nutritions'], meta: { name: 'Nutritions' } }
+  export interface NutritionDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Nutrition'], meta: { name: 'Nutrition' } }
     /**
-     * Find zero or one Nutritions that matches the filter.
-     * @param {NutritionsFindUniqueArgs} args - Arguments to find a Nutritions
+     * Find zero or one Nutrition that matches the filter.
+     * @param {NutritionFindUniqueArgs} args - Arguments to find a Nutrition
      * @example
-     * // Get one Nutritions
-     * const nutritions = await prisma.nutritions.findUnique({
+     * // Get one Nutrition
+     * const nutrition = await prisma.nutrition.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends NutritionsFindUniqueArgs>(args: SelectSubset<T, NutritionsFindUniqueArgs<ExtArgs>>): Prisma__NutritionsClient<$Result.GetResult<Prisma.$NutritionsPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends NutritionFindUniqueArgs>(args: SelectSubset<T, NutritionFindUniqueArgs<ExtArgs>>): Prisma__NutritionClient<$Result.GetResult<Prisma.$NutritionPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one Nutritions that matches the filter or throw an error with `error.code='P2025'`
+     * Find one Nutrition that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {NutritionsFindUniqueOrThrowArgs} args - Arguments to find a Nutritions
+     * @param {NutritionFindUniqueOrThrowArgs} args - Arguments to find a Nutrition
      * @example
-     * // Get one Nutritions
-     * const nutritions = await prisma.nutritions.findUniqueOrThrow({
+     * // Get one Nutrition
+     * const nutrition = await prisma.nutrition.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends NutritionsFindUniqueOrThrowArgs>(args: SelectSubset<T, NutritionsFindUniqueOrThrowArgs<ExtArgs>>): Prisma__NutritionsClient<$Result.GetResult<Prisma.$NutritionsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends NutritionFindUniqueOrThrowArgs>(args: SelectSubset<T, NutritionFindUniqueOrThrowArgs<ExtArgs>>): Prisma__NutritionClient<$Result.GetResult<Prisma.$NutritionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Nutritions that matches the filter.
+     * Find the first Nutrition that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {NutritionsFindFirstArgs} args - Arguments to find a Nutritions
+     * @param {NutritionFindFirstArgs} args - Arguments to find a Nutrition
      * @example
-     * // Get one Nutritions
-     * const nutritions = await prisma.nutritions.findFirst({
+     * // Get one Nutrition
+     * const nutrition = await prisma.nutrition.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends NutritionsFindFirstArgs>(args?: SelectSubset<T, NutritionsFindFirstArgs<ExtArgs>>): Prisma__NutritionsClient<$Result.GetResult<Prisma.$NutritionsPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends NutritionFindFirstArgs>(args?: SelectSubset<T, NutritionFindFirstArgs<ExtArgs>>): Prisma__NutritionClient<$Result.GetResult<Prisma.$NutritionPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Nutritions that matches the filter or
+     * Find the first Nutrition that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {NutritionsFindFirstOrThrowArgs} args - Arguments to find a Nutritions
+     * @param {NutritionFindFirstOrThrowArgs} args - Arguments to find a Nutrition
      * @example
-     * // Get one Nutritions
-     * const nutritions = await prisma.nutritions.findFirstOrThrow({
+     * // Get one Nutrition
+     * const nutrition = await prisma.nutrition.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends NutritionsFindFirstOrThrowArgs>(args?: SelectSubset<T, NutritionsFindFirstOrThrowArgs<ExtArgs>>): Prisma__NutritionsClient<$Result.GetResult<Prisma.$NutritionsPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends NutritionFindFirstOrThrowArgs>(args?: SelectSubset<T, NutritionFindFirstOrThrowArgs<ExtArgs>>): Prisma__NutritionClient<$Result.GetResult<Prisma.$NutritionPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find zero or more Nutritions that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {NutritionsFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {NutritionFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Nutritions
-     * const nutritions = await prisma.nutritions.findMany()
+     * const nutritions = await prisma.nutrition.findMany()
      * 
      * // Get first 10 Nutritions
-     * const nutritions = await prisma.nutritions.findMany({ take: 10 })
+     * const nutritions = await prisma.nutrition.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const nutritionsWithIdOnly = await prisma.nutritions.findMany({ select: { id: true } })
+     * const nutritionWithIdOnly = await prisma.nutrition.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends NutritionsFindManyArgs>(args?: SelectSubset<T, NutritionsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$NutritionsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends NutritionFindManyArgs>(args?: SelectSubset<T, NutritionFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$NutritionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a Nutritions.
-     * @param {NutritionsCreateArgs} args - Arguments to create a Nutritions.
+     * Create a Nutrition.
+     * @param {NutritionCreateArgs} args - Arguments to create a Nutrition.
      * @example
-     * // Create one Nutritions
-     * const Nutritions = await prisma.nutritions.create({
+     * // Create one Nutrition
+     * const Nutrition = await prisma.nutrition.create({
      *   data: {
-     *     // ... data to create a Nutritions
+     *     // ... data to create a Nutrition
      *   }
      * })
      * 
      */
-    create<T extends NutritionsCreateArgs>(args: SelectSubset<T, NutritionsCreateArgs<ExtArgs>>): Prisma__NutritionsClient<$Result.GetResult<Prisma.$NutritionsPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends NutritionCreateArgs>(args: SelectSubset<T, NutritionCreateArgs<ExtArgs>>): Prisma__NutritionClient<$Result.GetResult<Prisma.$NutritionPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Create many Nutritions.
-     * @param {NutritionsCreateManyArgs} args - Arguments to create many Nutritions.
+     * @param {NutritionCreateManyArgs} args - Arguments to create many Nutritions.
      * @example
      * // Create many Nutritions
-     * const nutritions = await prisma.nutritions.createMany({
+     * const nutrition = await prisma.nutrition.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends NutritionsCreateManyArgs>(args?: SelectSubset<T, NutritionsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends NutritionCreateManyArgs>(args?: SelectSubset<T, NutritionCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create many Nutritions and returns the data saved in the database.
-     * @param {NutritionsCreateManyAndReturnArgs} args - Arguments to create many Nutritions.
+     * @param {NutritionCreateManyAndReturnArgs} args - Arguments to create many Nutritions.
      * @example
      * // Create many Nutritions
-     * const nutritions = await prisma.nutritions.createManyAndReturn({
+     * const nutrition = await prisma.nutrition.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
      * // Create many Nutritions and only return the `id`
-     * const nutritionsWithIdOnly = await prisma.nutritions.createManyAndReturn({
+     * const nutritionWithIdOnly = await prisma.nutrition.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -2409,28 +2417,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends NutritionsCreateManyAndReturnArgs>(args?: SelectSubset<T, NutritionsCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$NutritionsPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends NutritionCreateManyAndReturnArgs>(args?: SelectSubset<T, NutritionCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$NutritionPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a Nutritions.
-     * @param {NutritionsDeleteArgs} args - Arguments to delete one Nutritions.
+     * Delete a Nutrition.
+     * @param {NutritionDeleteArgs} args - Arguments to delete one Nutrition.
      * @example
-     * // Delete one Nutritions
-     * const Nutritions = await prisma.nutritions.delete({
+     * // Delete one Nutrition
+     * const Nutrition = await prisma.nutrition.delete({
      *   where: {
-     *     // ... filter to delete one Nutritions
+     *     // ... filter to delete one Nutrition
      *   }
      * })
      * 
      */
-    delete<T extends NutritionsDeleteArgs>(args: SelectSubset<T, NutritionsDeleteArgs<ExtArgs>>): Prisma__NutritionsClient<$Result.GetResult<Prisma.$NutritionsPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends NutritionDeleteArgs>(args: SelectSubset<T, NutritionDeleteArgs<ExtArgs>>): Prisma__NutritionClient<$Result.GetResult<Prisma.$NutritionPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one Nutritions.
-     * @param {NutritionsUpdateArgs} args - Arguments to update one Nutritions.
+     * Update one Nutrition.
+     * @param {NutritionUpdateArgs} args - Arguments to update one Nutrition.
      * @example
-     * // Update one Nutritions
-     * const nutritions = await prisma.nutritions.update({
+     * // Update one Nutrition
+     * const nutrition = await prisma.nutrition.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2440,30 +2448,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends NutritionsUpdateArgs>(args: SelectSubset<T, NutritionsUpdateArgs<ExtArgs>>): Prisma__NutritionsClient<$Result.GetResult<Prisma.$NutritionsPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends NutritionUpdateArgs>(args: SelectSubset<T, NutritionUpdateArgs<ExtArgs>>): Prisma__NutritionClient<$Result.GetResult<Prisma.$NutritionPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Delete zero or more Nutritions.
-     * @param {NutritionsDeleteManyArgs} args - Arguments to filter Nutritions to delete.
+     * @param {NutritionDeleteManyArgs} args - Arguments to filter Nutritions to delete.
      * @example
      * // Delete a few Nutritions
-     * const { count } = await prisma.nutritions.deleteMany({
+     * const { count } = await prisma.nutrition.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends NutritionsDeleteManyArgs>(args?: SelectSubset<T, NutritionsDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends NutritionDeleteManyArgs>(args?: SelectSubset<T, NutritionDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Nutritions.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {NutritionsUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {NutritionUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many Nutritions
-     * const nutritions = await prisma.nutritions.updateMany({
+     * const nutrition = await prisma.nutrition.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2473,14 +2481,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends NutritionsUpdateManyArgs>(args: SelectSubset<T, NutritionsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends NutritionUpdateManyArgs>(args: SelectSubset<T, NutritionUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Nutritions and returns the data updated in the database.
-     * @param {NutritionsUpdateManyAndReturnArgs} args - Arguments to update many Nutritions.
+     * @param {NutritionUpdateManyAndReturnArgs} args - Arguments to update many Nutritions.
      * @example
      * // Update many Nutritions
-     * const nutritions = await prisma.nutritions.updateManyAndReturn({
+     * const nutrition = await prisma.nutrition.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2490,7 +2498,7 @@ export namespace Prisma {
      * })
      * 
      * // Update zero or more Nutritions and only return the `id`
-     * const nutritionsWithIdOnly = await prisma.nutritions.updateManyAndReturn({
+     * const nutritionWithIdOnly = await prisma.nutrition.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -2503,56 +2511,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends NutritionsUpdateManyAndReturnArgs>(args: SelectSubset<T, NutritionsUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$NutritionsPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends NutritionUpdateManyAndReturnArgs>(args: SelectSubset<T, NutritionUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$NutritionPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one Nutritions.
-     * @param {NutritionsUpsertArgs} args - Arguments to update or create a Nutritions.
+     * Create or update one Nutrition.
+     * @param {NutritionUpsertArgs} args - Arguments to update or create a Nutrition.
      * @example
-     * // Update or create a Nutritions
-     * const nutritions = await prisma.nutritions.upsert({
+     * // Update or create a Nutrition
+     * const nutrition = await prisma.nutrition.upsert({
      *   create: {
-     *     // ... data to create a Nutritions
+     *     // ... data to create a Nutrition
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Nutritions we want to update
+     *     // ... the filter for the Nutrition we want to update
      *   }
      * })
      */
-    upsert<T extends NutritionsUpsertArgs>(args: SelectSubset<T, NutritionsUpsertArgs<ExtArgs>>): Prisma__NutritionsClient<$Result.GetResult<Prisma.$NutritionsPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends NutritionUpsertArgs>(args: SelectSubset<T, NutritionUpsertArgs<ExtArgs>>): Prisma__NutritionClient<$Result.GetResult<Prisma.$NutritionPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
      * Count the number of Nutritions.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {NutritionsCountArgs} args - Arguments to filter Nutritions to count.
+     * @param {NutritionCountArgs} args - Arguments to filter Nutritions to count.
      * @example
      * // Count the number of Nutritions
-     * const count = await prisma.nutritions.count({
+     * const count = await prisma.nutrition.count({
      *   where: {
      *     // ... the filter for the Nutritions we want to count
      *   }
      * })
     **/
-    count<T extends NutritionsCountArgs>(
-      args?: Subset<T, NutritionsCountArgs>,
+    count<T extends NutritionCountArgs>(
+      args?: Subset<T, NutritionCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], NutritionsCountAggregateOutputType>
+          : GetScalarType<T['select'], NutritionCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Nutritions.
+     * Allows you to perform aggregations operations on a Nutrition.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {NutritionsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {NutritionAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -2572,13 +2580,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends NutritionsAggregateArgs>(args: Subset<T, NutritionsAggregateArgs>): Prisma.PrismaPromise<GetNutritionsAggregateType<T>>
+    aggregate<T extends NutritionAggregateArgs>(args: Subset<T, NutritionAggregateArgs>): Prisma.PrismaPromise<GetNutritionAggregateType<T>>
 
     /**
-     * Group by Nutritions.
+     * Group by Nutrition.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {NutritionsGroupByArgs} args - Group by arguments.
+     * @param {NutritionGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -2593,14 +2601,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends NutritionsGroupByArgs,
+      T extends NutritionGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: NutritionsGroupByArgs['orderBy'] }
-        : { orderBy?: NutritionsGroupByArgs['orderBy'] },
+        ? { orderBy: NutritionGroupByArgs['orderBy'] }
+        : { orderBy?: NutritionGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -2649,20 +2657,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, NutritionsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetNutritionsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, NutritionGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetNutritionGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Nutritions model
+   * Fields of the Nutrition model
    */
-  readonly fields: NutritionsFieldRefs;
+  readonly fields: NutritionFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Nutritions.
+   * The delegate class that acts as a "Promise-like" for Nutrition.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__NutritionsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__NutritionClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -2690,83 +2698,83 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Nutritions model
+   * Fields of the Nutrition model
    */
-  interface NutritionsFieldRefs {
-    readonly id: FieldRef<"Nutritions", 'Int'>
-    readonly datatime: FieldRef<"Nutritions", 'DateTime'>
-    readonly caloriesIn: FieldRef<"Nutritions", 'Int'>
-    readonly fat: FieldRef<"Nutritions", 'Float'>
-    readonly protein: FieldRef<"Nutritions", 'Float'>
-    readonly carbs: FieldRef<"Nutritions", 'Float'>
+  interface NutritionFieldRefs {
+    readonly id: FieldRef<"Nutrition", 'Int'>
+    readonly datatime: FieldRef<"Nutrition", 'DateTime'>
+    readonly caloriesIn: FieldRef<"Nutrition", 'Int'>
+    readonly fat: FieldRef<"Nutrition", 'Float'>
+    readonly protein: FieldRef<"Nutrition", 'Float'>
+    readonly carbs: FieldRef<"Nutrition", 'Float'>
   }
     
 
   // Custom InputTypes
   /**
-   * Nutritions findUnique
+   * Nutrition findUnique
    */
-  export type NutritionsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type NutritionFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Nutritions
+     * Select specific fields to fetch from the Nutrition
      */
-    select?: NutritionsSelect<ExtArgs> | null
+    select?: NutritionSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Nutritions
+     * Omit specific fields from the Nutrition
      */
-    omit?: NutritionsOmit<ExtArgs> | null
+    omit?: NutritionOmit<ExtArgs> | null
     /**
-     * Filter, which Nutritions to fetch.
+     * Filter, which Nutrition to fetch.
      */
-    where: NutritionsWhereUniqueInput
+    where: NutritionWhereUniqueInput
   }
 
   /**
-   * Nutritions findUniqueOrThrow
+   * Nutrition findUniqueOrThrow
    */
-  export type NutritionsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type NutritionFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Nutritions
+     * Select specific fields to fetch from the Nutrition
      */
-    select?: NutritionsSelect<ExtArgs> | null
+    select?: NutritionSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Nutritions
+     * Omit specific fields from the Nutrition
      */
-    omit?: NutritionsOmit<ExtArgs> | null
+    omit?: NutritionOmit<ExtArgs> | null
     /**
-     * Filter, which Nutritions to fetch.
+     * Filter, which Nutrition to fetch.
      */
-    where: NutritionsWhereUniqueInput
+    where: NutritionWhereUniqueInput
   }
 
   /**
-   * Nutritions findFirst
+   * Nutrition findFirst
    */
-  export type NutritionsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type NutritionFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Nutritions
+     * Select specific fields to fetch from the Nutrition
      */
-    select?: NutritionsSelect<ExtArgs> | null
+    select?: NutritionSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Nutritions
+     * Omit specific fields from the Nutrition
      */
-    omit?: NutritionsOmit<ExtArgs> | null
+    omit?: NutritionOmit<ExtArgs> | null
     /**
-     * Filter, which Nutritions to fetch.
+     * Filter, which Nutrition to fetch.
      */
-    where?: NutritionsWhereInput
+    where?: NutritionWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
      * Determine the order of Nutritions to fetch.
      */
-    orderBy?: NutritionsOrderByWithRelationInput | NutritionsOrderByWithRelationInput[]
+    orderBy?: NutritionOrderByWithRelationInput | NutritionOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the position for searching for Nutritions.
      */
-    cursor?: NutritionsWhereUniqueInput
+    cursor?: NutritionWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
@@ -2784,37 +2792,37 @@ export namespace Prisma {
      * 
      * Filter by unique combinations of Nutritions.
      */
-    distinct?: NutritionsScalarFieldEnum | NutritionsScalarFieldEnum[]
+    distinct?: NutritionScalarFieldEnum | NutritionScalarFieldEnum[]
   }
 
   /**
-   * Nutritions findFirstOrThrow
+   * Nutrition findFirstOrThrow
    */
-  export type NutritionsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type NutritionFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Nutritions
+     * Select specific fields to fetch from the Nutrition
      */
-    select?: NutritionsSelect<ExtArgs> | null
+    select?: NutritionSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Nutritions
+     * Omit specific fields from the Nutrition
      */
-    omit?: NutritionsOmit<ExtArgs> | null
+    omit?: NutritionOmit<ExtArgs> | null
     /**
-     * Filter, which Nutritions to fetch.
+     * Filter, which Nutrition to fetch.
      */
-    where?: NutritionsWhereInput
+    where?: NutritionWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
      * Determine the order of Nutritions to fetch.
      */
-    orderBy?: NutritionsOrderByWithRelationInput | NutritionsOrderByWithRelationInput[]
+    orderBy?: NutritionOrderByWithRelationInput | NutritionOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the position for searching for Nutritions.
      */
-    cursor?: NutritionsWhereUniqueInput
+    cursor?: NutritionWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
@@ -2832,37 +2840,37 @@ export namespace Prisma {
      * 
      * Filter by unique combinations of Nutritions.
      */
-    distinct?: NutritionsScalarFieldEnum | NutritionsScalarFieldEnum[]
+    distinct?: NutritionScalarFieldEnum | NutritionScalarFieldEnum[]
   }
 
   /**
-   * Nutritions findMany
+   * Nutrition findMany
    */
-  export type NutritionsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type NutritionFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Nutritions
+     * Select specific fields to fetch from the Nutrition
      */
-    select?: NutritionsSelect<ExtArgs> | null
+    select?: NutritionSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Nutritions
+     * Omit specific fields from the Nutrition
      */
-    omit?: NutritionsOmit<ExtArgs> | null
+    omit?: NutritionOmit<ExtArgs> | null
     /**
      * Filter, which Nutritions to fetch.
      */
-    where?: NutritionsWhereInput
+    where?: NutritionWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
      * Determine the order of Nutritions to fetch.
      */
-    orderBy?: NutritionsOrderByWithRelationInput | NutritionsOrderByWithRelationInput[]
+    orderBy?: NutritionOrderByWithRelationInput | NutritionOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the position for listing Nutritions.
      */
-    cursor?: NutritionsWhereUniqueInput
+    cursor?: NutritionWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
@@ -2875,91 +2883,91 @@ export namespace Prisma {
      * Skip the first `n` Nutritions.
      */
     skip?: number
-    distinct?: NutritionsScalarFieldEnum | NutritionsScalarFieldEnum[]
+    distinct?: NutritionScalarFieldEnum | NutritionScalarFieldEnum[]
   }
 
   /**
-   * Nutritions create
+   * Nutrition create
    */
-  export type NutritionsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type NutritionCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Nutritions
+     * Select specific fields to fetch from the Nutrition
      */
-    select?: NutritionsSelect<ExtArgs> | null
+    select?: NutritionSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Nutritions
+     * Omit specific fields from the Nutrition
      */
-    omit?: NutritionsOmit<ExtArgs> | null
+    omit?: NutritionOmit<ExtArgs> | null
     /**
-     * The data needed to create a Nutritions.
+     * The data needed to create a Nutrition.
      */
-    data: XOR<NutritionsCreateInput, NutritionsUncheckedCreateInput>
+    data: XOR<NutritionCreateInput, NutritionUncheckedCreateInput>
   }
 
   /**
-   * Nutritions createMany
+   * Nutrition createMany
    */
-  export type NutritionsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type NutritionCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * The data used to create many Nutritions.
      */
-    data: NutritionsCreateManyInput | NutritionsCreateManyInput[]
+    data: NutritionCreateManyInput | NutritionCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Nutritions createManyAndReturn
+   * Nutrition createManyAndReturn
    */
-  export type NutritionsCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type NutritionCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Nutritions
+     * Select specific fields to fetch from the Nutrition
      */
-    select?: NutritionsSelectCreateManyAndReturn<ExtArgs> | null
+    select?: NutritionSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Nutritions
+     * Omit specific fields from the Nutrition
      */
-    omit?: NutritionsOmit<ExtArgs> | null
+    omit?: NutritionOmit<ExtArgs> | null
     /**
      * The data used to create many Nutritions.
      */
-    data: NutritionsCreateManyInput | NutritionsCreateManyInput[]
+    data: NutritionCreateManyInput | NutritionCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Nutritions update
+   * Nutrition update
    */
-  export type NutritionsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type NutritionUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Nutritions
+     * Select specific fields to fetch from the Nutrition
      */
-    select?: NutritionsSelect<ExtArgs> | null
+    select?: NutritionSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Nutritions
+     * Omit specific fields from the Nutrition
      */
-    omit?: NutritionsOmit<ExtArgs> | null
+    omit?: NutritionOmit<ExtArgs> | null
     /**
-     * The data needed to update a Nutritions.
+     * The data needed to update a Nutrition.
      */
-    data: XOR<NutritionsUpdateInput, NutritionsUncheckedUpdateInput>
+    data: XOR<NutritionUpdateInput, NutritionUncheckedUpdateInput>
     /**
-     * Choose, which Nutritions to update.
+     * Choose, which Nutrition to update.
      */
-    where: NutritionsWhereUniqueInput
+    where: NutritionWhereUniqueInput
   }
 
   /**
-   * Nutritions updateMany
+   * Nutrition updateMany
    */
-  export type NutritionsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type NutritionUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * The data used to update Nutritions.
      */
-    data: XOR<NutritionsUpdateManyMutationInput, NutritionsUncheckedUpdateManyInput>
+    data: XOR<NutritionUpdateManyMutationInput, NutritionUncheckedUpdateManyInput>
     /**
      * Filter which Nutritions to update
      */
-    where?: NutritionsWhereInput
+    where?: NutritionWhereInput
     /**
      * Limit how many Nutritions to update.
      */
@@ -2967,25 +2975,25 @@ export namespace Prisma {
   }
 
   /**
-   * Nutritions updateManyAndReturn
+   * Nutrition updateManyAndReturn
    */
-  export type NutritionsUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type NutritionUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Nutritions
+     * Select specific fields to fetch from the Nutrition
      */
-    select?: NutritionsSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: NutritionSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Nutritions
+     * Omit specific fields from the Nutrition
      */
-    omit?: NutritionsOmit<ExtArgs> | null
+    omit?: NutritionOmit<ExtArgs> | null
     /**
      * The data used to update Nutritions.
      */
-    data: XOR<NutritionsUpdateManyMutationInput, NutritionsUncheckedUpdateManyInput>
+    data: XOR<NutritionUpdateManyMutationInput, NutritionUncheckedUpdateManyInput>
     /**
      * Filter which Nutritions to update
      */
-    where?: NutritionsWhereInput
+    where?: NutritionWhereInput
     /**
      * Limit how many Nutritions to update.
      */
@@ -2993,57 +3001,57 @@ export namespace Prisma {
   }
 
   /**
-   * Nutritions upsert
+   * Nutrition upsert
    */
-  export type NutritionsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type NutritionUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Nutritions
+     * Select specific fields to fetch from the Nutrition
      */
-    select?: NutritionsSelect<ExtArgs> | null
+    select?: NutritionSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Nutritions
+     * Omit specific fields from the Nutrition
      */
-    omit?: NutritionsOmit<ExtArgs> | null
+    omit?: NutritionOmit<ExtArgs> | null
     /**
-     * The filter to search for the Nutritions to update in case it exists.
+     * The filter to search for the Nutrition to update in case it exists.
      */
-    where: NutritionsWhereUniqueInput
+    where: NutritionWhereUniqueInput
     /**
-     * In case the Nutritions found by the `where` argument doesn't exist, create a new Nutritions with this data.
+     * In case the Nutrition found by the `where` argument doesn't exist, create a new Nutrition with this data.
      */
-    create: XOR<NutritionsCreateInput, NutritionsUncheckedCreateInput>
+    create: XOR<NutritionCreateInput, NutritionUncheckedCreateInput>
     /**
-     * In case the Nutritions was found with the provided `where` argument, update it with this data.
+     * In case the Nutrition was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<NutritionsUpdateInput, NutritionsUncheckedUpdateInput>
+    update: XOR<NutritionUpdateInput, NutritionUncheckedUpdateInput>
   }
 
   /**
-   * Nutritions delete
+   * Nutrition delete
    */
-  export type NutritionsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type NutritionDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Nutritions
+     * Select specific fields to fetch from the Nutrition
      */
-    select?: NutritionsSelect<ExtArgs> | null
+    select?: NutritionSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Nutritions
+     * Omit specific fields from the Nutrition
      */
-    omit?: NutritionsOmit<ExtArgs> | null
+    omit?: NutritionOmit<ExtArgs> | null
     /**
-     * Filter which Nutritions to delete.
+     * Filter which Nutrition to delete.
      */
-    where: NutritionsWhereUniqueInput
+    where: NutritionWhereUniqueInput
   }
 
   /**
-   * Nutritions deleteMany
+   * Nutrition deleteMany
    */
-  export type NutritionsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type NutritionDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Filter which Nutritions to delete
      */
-    where?: NutritionsWhereInput
+    where?: NutritionWhereInput
     /**
      * Limit how many Nutritions to delete.
      */
@@ -3051,17 +3059,17 @@ export namespace Prisma {
   }
 
   /**
-   * Nutritions without action
+   * Nutrition without action
    */
-  export type NutritionsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type NutritionDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Nutritions
+     * Select specific fields to fetch from the Nutrition
      */
-    select?: NutritionsSelect<ExtArgs> | null
+    select?: NutritionSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Nutritions
+     * Omit specific fields from the Nutrition
      */
-    omit?: NutritionsOmit<ExtArgs> | null
+    omit?: NutritionOmit<ExtArgs> | null
   }
 
 
@@ -3079,7 +3087,7 @@ export namespace Prisma {
   export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
-  export const DishesScalarFieldEnum: {
+  export const DishScalarFieldEnum: {
     id: 'id',
     title: 'title',
     thumnail: 'thumnail',
@@ -3089,10 +3097,10 @@ export namespace Prisma {
     createdAt: 'createdAt'
   };
 
-  export type DishesScalarFieldEnum = (typeof DishesScalarFieldEnum)[keyof typeof DishesScalarFieldEnum]
+  export type DishScalarFieldEnum = (typeof DishScalarFieldEnum)[keyof typeof DishScalarFieldEnum]
 
 
-  export const NutritionsScalarFieldEnum: {
+  export const NutritionScalarFieldEnum: {
     id: 'id',
     datatime: 'datatime',
     caloriesIn: 'caloriesIn',
@@ -3101,7 +3109,7 @@ export namespace Prisma {
     carbs: 'carbs'
   };
 
-  export type NutritionsScalarFieldEnum = (typeof NutritionsScalarFieldEnum)[keyof typeof NutritionsScalarFieldEnum]
+  export type NutritionScalarFieldEnum = (typeof NutritionScalarFieldEnum)[keyof typeof NutritionScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -3118,6 +3126,14 @@ export namespace Prisma {
   };
 
   export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
+
+
+  export const NullsOrder: {
+    first: 'first',
+    last: 'last'
+  };
+
+  export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
   /**
@@ -3191,83 +3207,83 @@ export namespace Prisma {
    */
 
 
-  export type DishesWhereInput = {
-    AND?: DishesWhereInput | DishesWhereInput[]
-    OR?: DishesWhereInput[]
-    NOT?: DishesWhereInput | DishesWhereInput[]
-    id?: IntFilter<"Dishes"> | number
-    title?: StringFilter<"Dishes"> | string
-    thumnail?: StringNullableListFilter<"Dishes">
-    videoLinks?: StringNullableListFilter<"Dishes">
-    instruction_step?: StringFilter<"Dishes"> | string
-    isFavorite?: BoolFilter<"Dishes"> | boolean
-    createdAt?: DateTimeFilter<"Dishes"> | Date | string
+  export type DishWhereInput = {
+    AND?: DishWhereInput | DishWhereInput[]
+    OR?: DishWhereInput[]
+    NOT?: DishWhereInput | DishWhereInput[]
+    id?: IntFilter<"Dish"> | number
+    title?: StringFilter<"Dish"> | string
+    thumnail?: StringNullableFilter<"Dish"> | string | null
+    videoLinks?: StringNullableFilter<"Dish"> | string | null
+    instruction_step?: StringNullableFilter<"Dish"> | string | null
+    isFavorite?: BoolFilter<"Dish"> | boolean
+    createdAt?: DateTimeFilter<"Dish"> | Date | string
   }
 
-  export type DishesOrderByWithRelationInput = {
+  export type DishOrderByWithRelationInput = {
     id?: SortOrder
     title?: SortOrder
-    thumnail?: SortOrder
-    videoLinks?: SortOrder
-    instruction_step?: SortOrder
+    thumnail?: SortOrderInput | SortOrder
+    videoLinks?: SortOrderInput | SortOrder
+    instruction_step?: SortOrderInput | SortOrder
     isFavorite?: SortOrder
     createdAt?: SortOrder
   }
 
-  export type DishesWhereUniqueInput = Prisma.AtLeast<{
+  export type DishWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: DishesWhereInput | DishesWhereInput[]
-    OR?: DishesWhereInput[]
-    NOT?: DishesWhereInput | DishesWhereInput[]
-    title?: StringFilter<"Dishes"> | string
-    thumnail?: StringNullableListFilter<"Dishes">
-    videoLinks?: StringNullableListFilter<"Dishes">
-    instruction_step?: StringFilter<"Dishes"> | string
-    isFavorite?: BoolFilter<"Dishes"> | boolean
-    createdAt?: DateTimeFilter<"Dishes"> | Date | string
+    AND?: DishWhereInput | DishWhereInput[]
+    OR?: DishWhereInput[]
+    NOT?: DishWhereInput | DishWhereInput[]
+    title?: StringFilter<"Dish"> | string
+    thumnail?: StringNullableFilter<"Dish"> | string | null
+    videoLinks?: StringNullableFilter<"Dish"> | string | null
+    instruction_step?: StringNullableFilter<"Dish"> | string | null
+    isFavorite?: BoolFilter<"Dish"> | boolean
+    createdAt?: DateTimeFilter<"Dish"> | Date | string
   }, "id">
 
-  export type DishesOrderByWithAggregationInput = {
+  export type DishOrderByWithAggregationInput = {
     id?: SortOrder
     title?: SortOrder
-    thumnail?: SortOrder
-    videoLinks?: SortOrder
-    instruction_step?: SortOrder
+    thumnail?: SortOrderInput | SortOrder
+    videoLinks?: SortOrderInput | SortOrder
+    instruction_step?: SortOrderInput | SortOrder
     isFavorite?: SortOrder
     createdAt?: SortOrder
-    _count?: DishesCountOrderByAggregateInput
-    _avg?: DishesAvgOrderByAggregateInput
-    _max?: DishesMaxOrderByAggregateInput
-    _min?: DishesMinOrderByAggregateInput
-    _sum?: DishesSumOrderByAggregateInput
+    _count?: DishCountOrderByAggregateInput
+    _avg?: DishAvgOrderByAggregateInput
+    _max?: DishMaxOrderByAggregateInput
+    _min?: DishMinOrderByAggregateInput
+    _sum?: DishSumOrderByAggregateInput
   }
 
-  export type DishesScalarWhereWithAggregatesInput = {
-    AND?: DishesScalarWhereWithAggregatesInput | DishesScalarWhereWithAggregatesInput[]
-    OR?: DishesScalarWhereWithAggregatesInput[]
-    NOT?: DishesScalarWhereWithAggregatesInput | DishesScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Dishes"> | number
-    title?: StringWithAggregatesFilter<"Dishes"> | string
-    thumnail?: StringNullableListFilter<"Dishes">
-    videoLinks?: StringNullableListFilter<"Dishes">
-    instruction_step?: StringWithAggregatesFilter<"Dishes"> | string
-    isFavorite?: BoolWithAggregatesFilter<"Dishes"> | boolean
-    createdAt?: DateTimeWithAggregatesFilter<"Dishes"> | Date | string
+  export type DishScalarWhereWithAggregatesInput = {
+    AND?: DishScalarWhereWithAggregatesInput | DishScalarWhereWithAggregatesInput[]
+    OR?: DishScalarWhereWithAggregatesInput[]
+    NOT?: DishScalarWhereWithAggregatesInput | DishScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Dish"> | number
+    title?: StringWithAggregatesFilter<"Dish"> | string
+    thumnail?: StringNullableWithAggregatesFilter<"Dish"> | string | null
+    videoLinks?: StringNullableWithAggregatesFilter<"Dish"> | string | null
+    instruction_step?: StringNullableWithAggregatesFilter<"Dish"> | string | null
+    isFavorite?: BoolWithAggregatesFilter<"Dish"> | boolean
+    createdAt?: DateTimeWithAggregatesFilter<"Dish"> | Date | string
   }
 
-  export type NutritionsWhereInput = {
-    AND?: NutritionsWhereInput | NutritionsWhereInput[]
-    OR?: NutritionsWhereInput[]
-    NOT?: NutritionsWhereInput | NutritionsWhereInput[]
-    id?: IntFilter<"Nutritions"> | number
-    datatime?: DateTimeFilter<"Nutritions"> | Date | string
-    caloriesIn?: IntFilter<"Nutritions"> | number
-    fat?: FloatFilter<"Nutritions"> | number
-    protein?: FloatFilter<"Nutritions"> | number
-    carbs?: FloatFilter<"Nutritions"> | number
+  export type NutritionWhereInput = {
+    AND?: NutritionWhereInput | NutritionWhereInput[]
+    OR?: NutritionWhereInput[]
+    NOT?: NutritionWhereInput | NutritionWhereInput[]
+    id?: IntFilter<"Nutrition"> | number
+    datatime?: DateTimeFilter<"Nutrition"> | Date | string
+    caloriesIn?: IntFilter<"Nutrition"> | number
+    fat?: FloatFilter<"Nutrition"> | number
+    protein?: FloatFilter<"Nutrition"> | number
+    carbs?: FloatFilter<"Nutrition"> | number
   }
 
-  export type NutritionsOrderByWithRelationInput = {
+  export type NutritionOrderByWithRelationInput = {
     id?: SortOrder
     datatime?: SortOrder
     caloriesIn?: SortOrder
@@ -3276,112 +3292,112 @@ export namespace Prisma {
     carbs?: SortOrder
   }
 
-  export type NutritionsWhereUniqueInput = Prisma.AtLeast<{
+  export type NutritionWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: NutritionsWhereInput | NutritionsWhereInput[]
-    OR?: NutritionsWhereInput[]
-    NOT?: NutritionsWhereInput | NutritionsWhereInput[]
-    datatime?: DateTimeFilter<"Nutritions"> | Date | string
-    caloriesIn?: IntFilter<"Nutritions"> | number
-    fat?: FloatFilter<"Nutritions"> | number
-    protein?: FloatFilter<"Nutritions"> | number
-    carbs?: FloatFilter<"Nutritions"> | number
+    AND?: NutritionWhereInput | NutritionWhereInput[]
+    OR?: NutritionWhereInput[]
+    NOT?: NutritionWhereInput | NutritionWhereInput[]
+    datatime?: DateTimeFilter<"Nutrition"> | Date | string
+    caloriesIn?: IntFilter<"Nutrition"> | number
+    fat?: FloatFilter<"Nutrition"> | number
+    protein?: FloatFilter<"Nutrition"> | number
+    carbs?: FloatFilter<"Nutrition"> | number
   }, "id">
 
-  export type NutritionsOrderByWithAggregationInput = {
+  export type NutritionOrderByWithAggregationInput = {
     id?: SortOrder
     datatime?: SortOrder
     caloriesIn?: SortOrder
     fat?: SortOrder
     protein?: SortOrder
     carbs?: SortOrder
-    _count?: NutritionsCountOrderByAggregateInput
-    _avg?: NutritionsAvgOrderByAggregateInput
-    _max?: NutritionsMaxOrderByAggregateInput
-    _min?: NutritionsMinOrderByAggregateInput
-    _sum?: NutritionsSumOrderByAggregateInput
+    _count?: NutritionCountOrderByAggregateInput
+    _avg?: NutritionAvgOrderByAggregateInput
+    _max?: NutritionMaxOrderByAggregateInput
+    _min?: NutritionMinOrderByAggregateInput
+    _sum?: NutritionSumOrderByAggregateInput
   }
 
-  export type NutritionsScalarWhereWithAggregatesInput = {
-    AND?: NutritionsScalarWhereWithAggregatesInput | NutritionsScalarWhereWithAggregatesInput[]
-    OR?: NutritionsScalarWhereWithAggregatesInput[]
-    NOT?: NutritionsScalarWhereWithAggregatesInput | NutritionsScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Nutritions"> | number
-    datatime?: DateTimeWithAggregatesFilter<"Nutritions"> | Date | string
-    caloriesIn?: IntWithAggregatesFilter<"Nutritions"> | number
-    fat?: FloatWithAggregatesFilter<"Nutritions"> | number
-    protein?: FloatWithAggregatesFilter<"Nutritions"> | number
-    carbs?: FloatWithAggregatesFilter<"Nutritions"> | number
+  export type NutritionScalarWhereWithAggregatesInput = {
+    AND?: NutritionScalarWhereWithAggregatesInput | NutritionScalarWhereWithAggregatesInput[]
+    OR?: NutritionScalarWhereWithAggregatesInput[]
+    NOT?: NutritionScalarWhereWithAggregatesInput | NutritionScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Nutrition"> | number
+    datatime?: DateTimeWithAggregatesFilter<"Nutrition"> | Date | string
+    caloriesIn?: IntWithAggregatesFilter<"Nutrition"> | number
+    fat?: FloatWithAggregatesFilter<"Nutrition"> | number
+    protein?: FloatWithAggregatesFilter<"Nutrition"> | number
+    carbs?: FloatWithAggregatesFilter<"Nutrition"> | number
   }
 
-  export type DishesCreateInput = {
+  export type DishCreateInput = {
     title: string
-    thumnail?: DishesCreatethumnailInput | string[]
-    videoLinks?: DishesCreatevideoLinksInput | string[]
-    instruction_step: string
+    thumnail?: string | null
+    videoLinks?: string | null
+    instruction_step?: string | null
     isFavorite?: boolean
     createdAt?: Date | string
   }
 
-  export type DishesUncheckedCreateInput = {
+  export type DishUncheckedCreateInput = {
     id?: number
     title: string
-    thumnail?: DishesCreatethumnailInput | string[]
-    videoLinks?: DishesCreatevideoLinksInput | string[]
-    instruction_step: string
+    thumnail?: string | null
+    videoLinks?: string | null
+    instruction_step?: string | null
     isFavorite?: boolean
     createdAt?: Date | string
   }
 
-  export type DishesUpdateInput = {
+  export type DishUpdateInput = {
     title?: StringFieldUpdateOperationsInput | string
-    thumnail?: DishesUpdatethumnailInput | string[]
-    videoLinks?: DishesUpdatevideoLinksInput | string[]
-    instruction_step?: StringFieldUpdateOperationsInput | string
+    thumnail?: NullableStringFieldUpdateOperationsInput | string | null
+    videoLinks?: NullableStringFieldUpdateOperationsInput | string | null
+    instruction_step?: NullableStringFieldUpdateOperationsInput | string | null
     isFavorite?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type DishesUncheckedUpdateInput = {
+  export type DishUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
-    thumnail?: DishesUpdatethumnailInput | string[]
-    videoLinks?: DishesUpdatevideoLinksInput | string[]
-    instruction_step?: StringFieldUpdateOperationsInput | string
+    thumnail?: NullableStringFieldUpdateOperationsInput | string | null
+    videoLinks?: NullableStringFieldUpdateOperationsInput | string | null
+    instruction_step?: NullableStringFieldUpdateOperationsInput | string | null
     isFavorite?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type DishesCreateManyInput = {
+  export type DishCreateManyInput = {
     id?: number
     title: string
-    thumnail?: DishesCreatethumnailInput | string[]
-    videoLinks?: DishesCreatevideoLinksInput | string[]
-    instruction_step: string
+    thumnail?: string | null
+    videoLinks?: string | null
+    instruction_step?: string | null
     isFavorite?: boolean
     createdAt?: Date | string
   }
 
-  export type DishesUpdateManyMutationInput = {
+  export type DishUpdateManyMutationInput = {
     title?: StringFieldUpdateOperationsInput | string
-    thumnail?: DishesUpdatethumnailInput | string[]
-    videoLinks?: DishesUpdatevideoLinksInput | string[]
-    instruction_step?: StringFieldUpdateOperationsInput | string
+    thumnail?: NullableStringFieldUpdateOperationsInput | string | null
+    videoLinks?: NullableStringFieldUpdateOperationsInput | string | null
+    instruction_step?: NullableStringFieldUpdateOperationsInput | string | null
     isFavorite?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type DishesUncheckedUpdateManyInput = {
+  export type DishUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
-    thumnail?: DishesUpdatethumnailInput | string[]
-    videoLinks?: DishesUpdatevideoLinksInput | string[]
-    instruction_step?: StringFieldUpdateOperationsInput | string
+    thumnail?: NullableStringFieldUpdateOperationsInput | string | null
+    videoLinks?: NullableStringFieldUpdateOperationsInput | string | null
+    instruction_step?: NullableStringFieldUpdateOperationsInput | string | null
     isFavorite?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type NutritionsCreateInput = {
+  export type NutritionCreateInput = {
     datatime?: Date | string
     caloriesIn: number
     fat: number
@@ -3389,33 +3405,7 @@ export namespace Prisma {
     carbs: number
   }
 
-  export type NutritionsUncheckedCreateInput = {
-    id?: number
-    datatime?: Date | string
-    caloriesIn: number
-    fat: number
-    protein: number
-    carbs: number
-  }
-
-  export type NutritionsUpdateInput = {
-    datatime?: DateTimeFieldUpdateOperationsInput | Date | string
-    caloriesIn?: IntFieldUpdateOperationsInput | number
-    fat?: FloatFieldUpdateOperationsInput | number
-    protein?: FloatFieldUpdateOperationsInput | number
-    carbs?: FloatFieldUpdateOperationsInput | number
-  }
-
-  export type NutritionsUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    datatime?: DateTimeFieldUpdateOperationsInput | Date | string
-    caloriesIn?: IntFieldUpdateOperationsInput | number
-    fat?: FloatFieldUpdateOperationsInput | number
-    protein?: FloatFieldUpdateOperationsInput | number
-    carbs?: FloatFieldUpdateOperationsInput | number
-  }
-
-  export type NutritionsCreateManyInput = {
+  export type NutritionUncheckedCreateInput = {
     id?: number
     datatime?: Date | string
     caloriesIn: number
@@ -3424,7 +3414,7 @@ export namespace Prisma {
     carbs: number
   }
 
-  export type NutritionsUpdateManyMutationInput = {
+  export type NutritionUpdateInput = {
     datatime?: DateTimeFieldUpdateOperationsInput | Date | string
     caloriesIn?: IntFieldUpdateOperationsInput | number
     fat?: FloatFieldUpdateOperationsInput | number
@@ -3432,7 +3422,33 @@ export namespace Prisma {
     carbs?: FloatFieldUpdateOperationsInput | number
   }
 
-  export type NutritionsUncheckedUpdateManyInput = {
+  export type NutritionUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    datatime?: DateTimeFieldUpdateOperationsInput | Date | string
+    caloriesIn?: IntFieldUpdateOperationsInput | number
+    fat?: FloatFieldUpdateOperationsInput | number
+    protein?: FloatFieldUpdateOperationsInput | number
+    carbs?: FloatFieldUpdateOperationsInput | number
+  }
+
+  export type NutritionCreateManyInput = {
+    id?: number
+    datatime?: Date | string
+    caloriesIn: number
+    fat: number
+    protein: number
+    carbs: number
+  }
+
+  export type NutritionUpdateManyMutationInput = {
+    datatime?: DateTimeFieldUpdateOperationsInput | Date | string
+    caloriesIn?: IntFieldUpdateOperationsInput | number
+    fat?: FloatFieldUpdateOperationsInput | number
+    protein?: FloatFieldUpdateOperationsInput | number
+    carbs?: FloatFieldUpdateOperationsInput | number
+  }
+
+  export type NutritionUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     datatime?: DateTimeFieldUpdateOperationsInput | Date | string
     caloriesIn?: IntFieldUpdateOperationsInput | number
@@ -3467,12 +3483,19 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
-  export type StringNullableListFilter<$PrismaModel = never> = {
-    equals?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    has?: string | StringFieldRefInput<$PrismaModel> | null
-    hasEvery?: string[] | ListStringFieldRefInput<$PrismaModel>
-    hasSome?: string[] | ListStringFieldRefInput<$PrismaModel>
-    isEmpty?: boolean
+  export type StringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
   export type BoolFilter<$PrismaModel = never> = {
@@ -3491,7 +3514,12 @@ export namespace Prisma {
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
-  export type DishesCountOrderByAggregateInput = {
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
+  }
+
+  export type DishCountOrderByAggregateInput = {
     id?: SortOrder
     title?: SortOrder
     thumnail?: SortOrder
@@ -3501,27 +3529,31 @@ export namespace Prisma {
     createdAt?: SortOrder
   }
 
-  export type DishesAvgOrderByAggregateInput = {
+  export type DishAvgOrderByAggregateInput = {
     id?: SortOrder
   }
 
-  export type DishesMaxOrderByAggregateInput = {
+  export type DishMaxOrderByAggregateInput = {
     id?: SortOrder
     title?: SortOrder
+    thumnail?: SortOrder
+    videoLinks?: SortOrder
     instruction_step?: SortOrder
     isFavorite?: SortOrder
     createdAt?: SortOrder
   }
 
-  export type DishesMinOrderByAggregateInput = {
+  export type DishMinOrderByAggregateInput = {
     id?: SortOrder
     title?: SortOrder
+    thumnail?: SortOrder
+    videoLinks?: SortOrder
     instruction_step?: SortOrder
     isFavorite?: SortOrder
     createdAt?: SortOrder
   }
 
-  export type DishesSumOrderByAggregateInput = {
+  export type DishSumOrderByAggregateInput = {
     id?: SortOrder
   }
 
@@ -3559,6 +3591,24 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
+  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
   export type BoolWithAggregatesFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
@@ -3592,7 +3642,7 @@ export namespace Prisma {
     not?: NestedFloatFilter<$PrismaModel> | number
   }
 
-  export type NutritionsCountOrderByAggregateInput = {
+  export type NutritionCountOrderByAggregateInput = {
     id?: SortOrder
     datatime?: SortOrder
     caloriesIn?: SortOrder
@@ -3601,7 +3651,7 @@ export namespace Prisma {
     carbs?: SortOrder
   }
 
-  export type NutritionsAvgOrderByAggregateInput = {
+  export type NutritionAvgOrderByAggregateInput = {
     id?: SortOrder
     caloriesIn?: SortOrder
     fat?: SortOrder
@@ -3609,16 +3659,7 @@ export namespace Prisma {
     carbs?: SortOrder
   }
 
-  export type NutritionsMaxOrderByAggregateInput = {
-    id?: SortOrder
-    datatime?: SortOrder
-    caloriesIn?: SortOrder
-    fat?: SortOrder
-    protein?: SortOrder
-    carbs?: SortOrder
-  }
-
-  export type NutritionsMinOrderByAggregateInput = {
+  export type NutritionMaxOrderByAggregateInput = {
     id?: SortOrder
     datatime?: SortOrder
     caloriesIn?: SortOrder
@@ -3627,7 +3668,16 @@ export namespace Prisma {
     carbs?: SortOrder
   }
 
-  export type NutritionsSumOrderByAggregateInput = {
+  export type NutritionMinOrderByAggregateInput = {
+    id?: SortOrder
+    datatime?: SortOrder
+    caloriesIn?: SortOrder
+    fat?: SortOrder
+    protein?: SortOrder
+    carbs?: SortOrder
+  }
+
+  export type NutritionSumOrderByAggregateInput = {
     id?: SortOrder
     caloriesIn?: SortOrder
     fat?: SortOrder
@@ -3651,26 +3701,12 @@ export namespace Prisma {
     _max?: NestedFloatFilter<$PrismaModel>
   }
 
-  export type DishesCreatethumnailInput = {
-    set: string[]
-  }
-
-  export type DishesCreatevideoLinksInput = {
-    set: string[]
-  }
-
   export type StringFieldUpdateOperationsInput = {
     set?: string
   }
 
-  export type DishesUpdatethumnailInput = {
-    set?: string[]
-    push?: string | string[]
-  }
-
-  export type DishesUpdatevideoLinksInput = {
-    set?: string[]
-    push?: string | string[]
+  export type NullableStringFieldUpdateOperationsInput = {
+    set?: string | null
   }
 
   export type BoolFieldUpdateOperationsInput = {
@@ -3720,6 +3756,20 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     not?: NestedStringFilter<$PrismaModel> | string
+  }
+
+  export type NestedStringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
   export type NestedBoolFilter<$PrismaModel = never> = {
@@ -3780,6 +3830,34 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
+  }
+
+  export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
   export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
