@@ -117,23 +117,53 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
-exports.Prisma.DishScalarFieldEnum = {
+exports.Prisma.UserScalarFieldEnum = {
   id: 'id',
-  title: 'title',
-  thumnail: 'thumnail',
-  videoLinks: 'videoLinks',
-  instruction_step: 'instruction_step',
-  isFavorite: 'isFavorite',
-  createdAt: 'createdAt'
+  refreshToken: 'refreshToken',
+  username: 'username',
+  email: 'email',
+  passwordHash: 'passwordHash',
+  firstName: 'firstName',
+  lastName: 'lastName',
+  avatarUrl: 'avatarUrl'
 };
 
-exports.Prisma.NutritionScalarFieldEnum = {
+exports.Prisma.RecipeScalarFieldEnum = {
   id: 'id',
-  datatime: 'datatime',
-  caloriesIn: 'caloriesIn',
-  fat: 'fat',
+  recipeName: 'recipeName',
+  totalTime: 'totalTime',
+  carbs: 'carbs',
   protein: 'protein',
-  carbs: 'carbs'
+  fat: 'fat',
+  shortDescription: 'shortDescription',
+  description: 'description',
+  instructions: 'instructions',
+  imageUrl: 'imageUrl'
+};
+
+exports.Prisma.IngredientTypeScalarFieldEnum = {
+  id: 'id',
+  label: 'label'
+};
+
+exports.Prisma.IngredientScalarFieldEnum = {
+  id: 'id',
+  label: 'label',
+  ingredientTypeId: 'ingredientTypeId'
+};
+
+exports.Prisma.UnitScalarFieldEnum = {
+  id: 'id',
+  label: 'label',
+  sort: 'sort'
+};
+
+exports.Prisma.RecipeIngredientScalarFieldEnum = {
+  id: 'id',
+  recipeId: 'recipeId',
+  ingredientId: 'ingredientId',
+  unitId: 'unitId',
+  amount: 'amount'
 };
 
 exports.Prisma.SortOrder = {
@@ -153,8 +183,12 @@ exports.Prisma.NullsOrder = {
 
 
 exports.Prisma.ModelName = {
-  Dish: 'Dish',
-  Nutrition: 'Nutrition'
+  User: 'User',
+  Recipe: 'Recipe',
+  IngredientType: 'IngredientType',
+  Ingredient: 'Ingredient',
+  Unit: 'Unit',
+  RecipeIngredient: 'RecipeIngredient'
 };
 
 /**
