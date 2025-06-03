@@ -6,7 +6,7 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
+  // output   = "../generated/prisma"
 }
 
 datasource db {
@@ -29,9 +29,10 @@ model Recipe {
   id               Int     @id @default(autoincrement())
   recipeName       String  @unique @db.VarChar(128)
   totalTime        Int
-  carbs            Int
-  protein          Int
-  fat              Int
+  calories         Float
+  carbs            Float
+  protein          Float
+  fat              Float
   shortDescription String? @db.VarChar(128)
   description      String? @db.VarChar(255)
   instructions     String
@@ -48,8 +49,8 @@ model IngredientType {
 }
 
 model Ingredient {
-  id                Int    @id @default(autoincrement())
-  label             String @unique @db.VarChar(64)
+  id               Int    @id @default(autoincrement())
+  label            String @unique @db.VarChar(64)
   ingredientTypeId Int
 
   ingredientType IngredientType @relation(fields: [ingredientTypeId], references: [id])

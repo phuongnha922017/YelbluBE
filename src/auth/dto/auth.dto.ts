@@ -28,12 +28,12 @@ export class SignupDto {
     @MinLength(8)
     @MaxLength(255)
     @Matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])(?![.\n]).*$/,
-        { message: "Password must contain uppercase, lowercase letter, number and special character" }
+        { message: "password must contain uppercase, lowercase letter, number and special character" }
     )
     password: string;
 }
 
-export class ReSignAccessToken {
+export class ReSignAccessTokenDto {
     @ApiProperty({ type: String, description: "Refresh token to re-sign access token", required: true, example: "eyJhbGci..." })
     @IsString()
     refreshToken: string;

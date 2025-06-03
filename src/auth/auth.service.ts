@@ -3,7 +3,7 @@ import { JwtService } from "@nestjs/jwt";
 import * as argon from "argon2";
 import { PrismaService } from "src/prisma/prisma.service";
 
-import { LoginDto, ReSignAccessToken, SignupDto } from "./dto";
+import { LoginDto, ReSignAccessTokenDto, SignupDto } from "./dto";
 
 
 @Injectable()
@@ -20,14 +20,12 @@ export class AuthService {
                 ]
             }
         });
-
         if (!user) {
             throw new ForbiddenException("User not found");
         }
 
         // Verify the password using argon2
         const isMatch = await argon.verify(user.passwordHash, dto.password);
-
         if (!isMatch) {
             throw new ForbiddenException("Wrong password");
         }
@@ -70,7 +68,7 @@ export class AuthService {
         }
     }
 
-    async reSignAccessToken(dto: ReSignAccessToken): Promise<string> {
+    async reSignAccessToken(dto: ReSignAccessTokenDto): Promise<string> {
         try {
             const payload = await this.jwt.verifyAsync(dto.refreshToken, {
                 secret: process.env.REFRESH_TOKEN_SECRET || 'defaultRefreshTokenSecret',
@@ -92,7 +90,6 @@ export class AuthService {
         const user = await this.prisma.user.findUnique({
             where: { id: userId, username: username },
         });
-
         if (!user) {
             throw new ForbiddenException("User not found");
         }

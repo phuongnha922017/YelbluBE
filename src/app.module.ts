@@ -7,11 +7,12 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { PrismaService } from './prisma/prisma.service';
+import { RecipeModule } from './recipe/recipe.module';
+import { IngredientModule } from './ingredient/ingredient.module';
 
 
 @Module({
   imports: [
-    AuthModule, PrismaModule,
     I18nModule.forRoot({
       fallbackLanguage: 'en',
       loaderOptions: {
@@ -26,6 +27,7 @@ import { PrismaService } from './prisma/prisma.service';
         AcceptLanguageResolver,
       ],
     }),
+    PrismaModule, AuthModule, RecipeModule, IngredientModule,
   ],
   controllers: [AppController,],
   providers: [AppService, PrismaService],

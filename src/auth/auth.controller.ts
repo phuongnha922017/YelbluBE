@@ -2,7 +2,7 @@ import { Body, Controller, Post } from "@nestjs/common";
 import { ApiBody, ApiOperation, ApiTags } from "@nestjs/swagger";
 
 import { AuthService } from "./auth.service";
-import { LoginDto, ReSignAccessToken, SignupDto } from "./dto";
+import { LoginDto, ReSignAccessTokenDto, SignupDto } from "./dto";
 
 @ApiTags('Auth')
 @Controller('auth')
@@ -25,8 +25,8 @@ export class AuthController {
 
     @ApiOperation({ summary: "API for generating new access token" })
     @Post('resign-access-token')
-    @ApiBody({ type: ReSignAccessToken, required: true })
-    async reSignaccessToken(@Body() dto: ReSignAccessToken) {
+    @ApiBody({ type: ReSignAccessTokenDto, required: true })
+    async reSignaccessToken(@Body() dto: ReSignAccessTokenDto) {
         return await this.authService.reSignAccessToken(dto);
     }
 }
