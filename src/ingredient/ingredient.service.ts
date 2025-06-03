@@ -6,7 +6,7 @@ export class IngredientService {
     constructor(private prisma: PrismaService) {}
 
     async getAllIngredients() {
-        return this.prisma.ingredient.findMany({
+        return await this.prisma.groupedIngredient.findMany({
         })
     }
 }

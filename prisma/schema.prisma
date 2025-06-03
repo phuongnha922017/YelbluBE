@@ -79,3 +79,11 @@ model RecipeIngredient {
 
   @@unique([recipeId, ingredientId, unitId], name: "recipeingredient_recipe_ingredient_unit_key")
 }
+
+model GroupedIngredient {
+  typeId      Int    @unique
+  typeLabel   String @unique @db.VarChar(64)
+  ingredients Json
+
+  @@map("GroupedIngredient")
+}
