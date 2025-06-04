@@ -1,6 +1,8 @@
 import { ForbiddenException, Injectable } from "@nestjs/common";
 import { JwtService } from "@nestjs/jwt";
 import * as argon from "argon2";
+// import { randomInt } from 'crypto';
+import * as nodemailer from "nodemailer";
 import { PrismaService } from "src/prisma/prisma.service";
 
 import { LoginDto, ReSignAccessTokenDto, SignupDto } from "./dto";
@@ -33,7 +35,18 @@ export class AuthService {
         // Generate JWT token
         const accessToken = await this.signAccessToken(user.id, user.username);
         const refreshToken = await this.signRefreshToken(user.id, user.username);
-        return { accessToken: accessToken, refreshToken: refreshToken };
+        return {
+            accessToken: accessToken,
+            refreshToken: refreshToken,
+            userInfo: {
+                id: user.id,
+                username: user.username,
+                email: user.email,
+                firstName: user.firstName,
+                lastName: user.lastName,
+                avatarUrl: user.avatarUrl,
+            }
+        };
     }
 
     async getSignup(dto: SignupDto) {
@@ -52,6 +65,23 @@ export class AuthService {
         } catch (error) {
             throw new ForbiddenException("Error creating user: " + error.message);
         }
+    }
+
+    async sendEmailOtp(email: string, otp: string) {
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: process.env.EMAIL_SENDER,
+                pass: process.env.EMAIL_PASSWORD,
+            },
+        });
+
+        await transporter.sendMail({
+            from: process.env.EMAIL_SENDER,
+            to: email,
+            subject: 'Verify Yelblu account',
+            text: `Your verification code is: ${otp}`,
+        });
     }
 
     async signAccessToken(userId: number, username: string): Promise<string> {
