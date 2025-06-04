@@ -80,10 +80,13 @@ model RecipeIngredient {
   @@unique([recipeId, ingredientId, unitId], name: "recipeingredient_recipe_ingredient_unit_key")
 }
 
-model GroupedIngredient {
-  typeId      Int    @unique
-  typeLabel   String @unique @db.VarChar(64)
-  ingredients Json
-
-  @@map("GroupedIngredient")
+model EmailVerification {
+  id           Int      @id @default(autoincrement())
+  email        String   @unique @db.VarChar(255)
+  username     String   @unique @db.VarChar(32)
+  passwordHash String   @db.VarChar(255)
+  otpHash      String   @db.VarChar(255)
+  expiresAt    DateTime
+  verified     Boolean  @default(false)
+  createdAt    DateTime @default(now())
 }

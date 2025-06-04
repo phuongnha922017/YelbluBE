@@ -3,10 +3,9 @@ import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
 export class IngredientService {
-    constructor(private prisma: PrismaService) {}
+    constructor(private prisma: PrismaService) { }
 
     async getAllIngredients() {
-        return await this.prisma.groupedIngredient.findMany({
-        })
+        return await this.prisma.$queryRaw`SELECT * FROM "GroupedIngredient"`;
     }
 }
