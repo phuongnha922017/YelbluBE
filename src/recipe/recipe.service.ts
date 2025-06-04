@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 
-import { SuggestRecipeDto } from './dto';
+import { SuggestRecipeByLabelDto, SuggestRecipeDto } from './dto';
 
 @Injectable()
 export class RecipeService {
@@ -14,6 +14,30 @@ export class RecipeService {
                     some: {
                         ingredientId: {
                             in: dto.ingredientIds
+                        }
+                    }
+                }
+            },
+            select: {
+                id: true,
+                recipeName: true,
+                totalTime: true,
+                calories: true,
+                shortDescription: true,
+                imageUrl: true,
+            }
+        })
+    }
+
+    async suggestRecipeByLabel(dto: SuggestRecipeByLabelDto) {
+        return this.prisma.recipe.findMany({
+            where: {
+                recipeIngredients: {
+                    some: {
+                        ingredient: {
+                            label: {
+                                in: dto.ingredientLabels
+                            }
                         }
                     }
                 }

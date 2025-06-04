@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { ApiBody, ApiOperation, ApiTags } from '@nestjs/swagger';
 
-import { SuggestRecipeDto } from './dto';
+import { SuggestRecipeByLabelDto,SuggestRecipeDto } from './dto';
 import { RecipeService } from './recipe.service';
 
 @ApiTags('Recipe')
@@ -9,11 +9,18 @@ import { RecipeService } from './recipe.service';
 export class RecipeController {
     constructor(private recipeService: RecipeService) { }
 
-    @ApiOperation({ summary: "API for suggesting recipes based on user's ingredients" })
+    @ApiOperation({ summary: "API for suggesting recipes based on ingredients's ID" })
     @Post('suggest')
     @ApiBody({ type: SuggestRecipeDto, required: true })
     async suggestRecipe(@Body() dto: SuggestRecipeDto) {
         return await this.recipeService.suggestRecipe(dto);
+    };
+
+    @ApiOperation({ summary: "API for suggesting recipes based on ingredients's label" })
+    @Post('suggest-label')
+    @ApiBody({ type: SuggestRecipeByLabelDto, required: true })
+    async suggestRecipeByLabel(@Body() dto: SuggestRecipeByLabelDto) {
+        return await this.recipeService.suggestRecipeByLabel(dto);
     };
 
     @ApiOperation({ summary: "API for getting recipe details by ID" })
